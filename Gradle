@@ -1,0 +1,14 @@
+利用gradle构建工具来自动构建Android项目
+
+由于其基于jvm，所以可以通过java代码
+或者其他任何基于jvm的语言去开发你自己的插件
+
+在gradle中的两大重要概念：
+	1.project：每一个build.gradle文件代表一个project
+	2.tasks：tasks在build.gradle中定义
+
+	每一次构建都是有至少一个project来完成
+	AS 中的project和gradle中的project不同
+
+	
+	
