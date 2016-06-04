@@ -95,6 +95,14 @@ Github账号：Egeye 8t
 	从远程版本库上获取最新的代码并且合并到本地
 	git pull origin master
 
+	将远程仓库与本地仓库关联
+	git remote add origin git@github.com:username/repository.git
+
+	第一次推送master分支,-u参数，
+	把本地的master分支内容推送的远程新的master分支，
+	还会把本地的master分支和远程的master分支关联起来
+	git push -u origin master
+
 -------------------------------------------------------------------------------------
 
 
