@@ -1,6 +1,6 @@
 # Sublime Text
 ***
-Keymap
+##### Keymap
 1. Ctrl + D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）
 2. Ctrl + G 跳转到相应的行
 3. Ctrl + J 合并行（已选择需要合并的多行时）
@@ -63,7 +63,7 @@ Keymap
 
 * Sublime Text 如何安装Package Control和插件
 http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package.html
-
+***
 #### 已安装插件	
 * BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号	
 * Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
