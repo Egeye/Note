@@ -63,7 +63,9 @@
 
 * Sublime Text 如何安装Package Control和插件
 http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package.html
+
 ***
+
 #### 已安装插件	
 * BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号	
 * Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
