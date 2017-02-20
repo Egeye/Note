@@ -12,4 +12,8 @@ Note or Memo.
 运行：dxdiag
 
 ***
-#### 
+#### ES6文档
+1. https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
+2. http://localhost:3000/#/component/ifcomment?_k=u2osc1
+3. http://reactjs.cn/react/docs/tutorial.html
+4. https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
