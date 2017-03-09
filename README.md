@@ -1,5 +1,4 @@
 # Note
-Note or Memo.
 ***
 #### SQLServer2005
 1. cscript C:\inetpub\adminscripts\adsutil.vbs SET W3SVC/AppPools/Enable32bitAppOnWin64 1 
