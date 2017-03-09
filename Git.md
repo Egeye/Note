@@ -3,92 +3,94 @@ Github账号：Egeye8t
 
 1. 配置身份	
 	> git config --global user.name "Egeye"
+	
 	> git config --global user.email "egeye4y@gmail.com"
 
 2. 创建代码仓库
 	> git init
 
 3. 如果出现警告就设置换行命令
-> git config --global core.autocrlf false 
->> warning: LF will be replaced by CRLF in readme.txt.
->> The file will have its original line endings in your working directory.
+	> git config --global core.autocrlf false 
+	>> warning: LF will be replaced by CRLF in readme.txt.
+	
+	>> The file will have its original line endings in your working directory.
 
 4. 添加
-> git add <filename/directory>
+	> git add <filename/directory>
 
-> git add .
+	> git add .
 
 5. 提交到本地仓库
-> git commit <文件名> -m "Describe message."
+	> git commit <文件名> -m "Describe message."
 
-> git commit -m "Describe message."
->> -m参数来加上提交的描述信息，没有描述信息的提交被认为是不合法的
+	> git commit -m "Describe message."
+	>> -m参数来加上提交的描述信息，没有描述信息的提交被认为是不合法的
 
-> add 命令是把想要提交的代码先添加进来
+	> add 命令是把想要提交的代码先添加进来
 
-> commit 命令则是真正地去执行提交操作
+	> commit 命令则是真正地去执行提交操作
 
 6. Git 忽略
-> vi .gitignore
+	> vi .gitignore
 
-> touch .gitignore
->> 创建一个名为.gitignore的文件，写入此文件中的文件名或者目录代表不纳入版本控制中
+	> touch .gitignore
+	>> 创建一个名为.gitignore的文件，写入此文件中的文件名或者目录代表不纳入版本控制中
 
 7. 查看状态
-> git status
+	> git status
 
 8. 查看修改
-> git diff
+	> git diff
 
-> git diff src/com/example/test/MainActivity.java
+	> git diff src/com/example/test/MainActivity.java
 
 9. 撤销修改
-只适用于那些还没有执行过add命令的文件
-> git checkout src/com/example/test/MainActivity.java
+	> git checkout src/com/example/test/MainActivity.java
+	>> 只适用于那些还没有执行过add命令的文件
 
-已经添加了，取消添加使用的是reset命令
-> git reset HEAD src/com/example/test/MainActivity.java
+	> git reset HEAD src/com/example/test/MainActivity.java
+	>> 已经添加了，取消添加使用的是reset命令
 
 10. 查看提交记录
-> git log
+	> git log
 
-只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
-> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
+	> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
+	>> 只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
 
-查看提交记录具体修改内容，在命令中加入-p参数
-> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
+	> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
+	>> 查看提交记录具体修改内容，在命令中加入-p参数
 
 11. 分支
-查看分支
-> git branch –a
-	
-创建分支
-> git branch version1.0
-	
-切换分支
-> git checkout version1.0
-	
-删除分支
-> git branch -D version1.0
+	> git branch –a
+	>> 查看分支
 
->> 主线为 master分支
->> 分支前面*号代表当前所处的分支
+	> git branch version1.0
+	> 创建分支
+
+	> git checkout version1.0
+	>> 切换分支
+
+	> git branch -D version1.0
+	>> 删除分支
+
+	>> 主线为 master分支
+	>> 分支前面*号代表当前所处的分支
 
 12. 合并
-> git checkout master
+	> git checkout master
 
-> git merge version1.0
+	> git merge version1.0
 
 13. 与远程版本库协作
-> git clone https://github.com/exmaple/test.git
+	> git clone https://github.com/exmaple/test.git
 	
-本地修改的内容同步到远程版本库
-> git push origin master
+	> git push origin master
+	>> 本地修改的内容同步到远程版本库
 	
-将远程版本库上的修改同步到本地
-> git fetch origin master
-> git diff origin/master
-> git merge origin/master
+	> git fetch origin master
+	> git diff origin/master
+	> git merge origin/master
+	>> 将远程版本库上的修改同步到本地
 
 	执行这个命令后，就会将远程版本库上的代码同步到本地，
 	却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，
