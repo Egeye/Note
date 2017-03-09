@@ -155,12 +155,15 @@ Git：<https://git-scm.com/download/>
     D---E---F---G---H    master
  
 把top分支上的B和C拣选合并到master分支上
-1、切换到master分支
-gitcheckout master
-2、拣选合并 B 和 C
-git cherry-pick B C（B 和 C 之间用空格隔开）
-3、合并结束后看log
-LogID 即哈希值改变，注释信息不变
+
+1. 切换到master分支
+	gitcheckout master
+	
+2. 拣选合并 B 和 C
+	git cherry-pick B C（B 和 C 之间用空格隔开）
+	
+3. 合并结束后看log
+	LogID 即哈希值改变，注释信息不变
 
 合并后： 
              A---B---C      top
@@ -180,14 +183,18 @@ LogID 即哈希值改变，注释信息不变
     D---E---F---G---H    master
 
 把top分支上的B和C压合合并到master分支上
-1、切换到master分支
-gitcheckout master
-2、压合合并 B和C
-git merge --squash B C （B和C之间用空格隔开）
-3、把合并过来的修改提交到master分支上
-git commit -m " 注释 "
-4、合并结束后看log
-新增一条提交，注释是新的注释
+
+1. 切换到master分支
+	gitcheckout master
+	
+2. 压合合并 B和C
+	git merge --squash B C （B和C之间用空格隔开）
+	
+3. 把合并过来的修改提交到master分支上
+	git commit -m " 注释 "
+	
+4. 合并结束后看log
+	新增一条提交，注释是新的注释
 
 合并后：
           A---B---C      top
@@ -206,12 +213,15 @@ git merge --squash 后面如果跟着哈希值，不管跟几个哈希值，不�
     D---E---F---G---H    master
 
 把top分支合并到master分支上
-1、切换到master分支
-gitcheckout master
-2、合并top分支
-git merge top
-3、合并结束后看log
-top上的提交增加到master上，并新增一条合并信息。
+
+1. 切换到master分支
+	gitcheckout master
+	
+2. 合并top分支
+	git merge top
+	
+3. 合并结束后看log
+	top上的提交增加到master上，并新增一条合并信息。
 
 合并后：
           A-----B----C      top
@@ -223,23 +233,20 @@ top上的提交增加到master上，并新增一条合并信息。
 
 ***
 待功能开发完毕之后，合并到develop分支，合并的时候有两种方式： 
-    A、压合合并：将在issue1上的修改作为一次提交到develop分支上 
+
+1. 压合合并：将在issue1上的修改作为一次提交到develop分支上 
        git checkout develop 
        git merge --squash issue1
 
-    B、直接合并：可以保留issue1上全部的历史提交记录 
+2. 直接合并：可以保留issue1上全部的历史提交记录 
        git checkout develop 
        git merge issue1 
 
        合并错误日志：2.10：Already up-to-date
 
-    C、拣选合并：将issue1上的部分活动合并到develop上，这个方式不适合上面描述的场景 
+3. 拣选合并：将issue1上的部分活动合并到develop上，这个方式不适合上面描述的场景 
        git checkout develop 
        git cherry-pick 321d76f（连续拣选可以通过-n选项） 
 
 
-Git reflog 恢复项目历史，
-
-
-
-
+Git reflog 恢复项目历史
