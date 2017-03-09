@@ -1,117 +1,148 @@
 ### Git 使用
-Github账号：Egeye8t
 
-1. 配置身份	
-	> git config --global user.name "Egeye"
+Github：Egeye8t
+Git：<https://git-scm.com/download/> 
+
+1. 配置
+	``` git
+	git config --global user.name "Egeye"
+	git config --global user.email "egeye4y@gmail.com"
+	```
 	
-	> git config --global user.email "egeye4y@gmail.com"
+2. 创建代码仓库 
+	``` git
+	git init
+	```
+	> 需要CD命令到目标目录
 
-2. 创建代码仓库
-	> git init
+3. 设置换行命令
+	``` git
+	git config --global core.autocrlf false 
+	```
+	> 如果有出警告
+	>> warning: LF will be replaced by CRLF in readme.txt.The file will have its original line endings in your working directory.
 
-3. 如果出现警告就设置换行命令
-	> git config --global core.autocrlf false 
-	>> warning: LF will be replaced by CRLF in readme.txt.
 	
-	>> The file will have its original line endings in your working directory.
-
 4. 添加
-	> git add <filename/directory>
-
-	> git add .
+	``` git
+	git add <filename/directory>
+	git add .
+	```
+	> 添加单个指定文件或者指定整个目录，或者添加所有的
 
 5. 提交到本地仓库
-	> git commit <文件名> -m "Describe message."
+	``` git
+	git commit <文件名> -m "Describe message."
+	git commit -m "Describe message."
+	```
+	> -m参数来加上提交的描述信息，没有描述信息的提交被认为是不合法的
+	
+	>> add 命令是把想要提交的代码先添加进来
+	
+	>> commit 命令则是真正地去执行提交操作
 
-	> git commit -m "Describe message."
-	>> -m参数来加上提交的描述信息，没有描述信息的提交被认为是不合法的
 
-	> add 命令是把想要提交的代码先添加进来
-
-	> commit 命令则是真正地去执行提交操作
-
-6. Git 忽略
-	> vi .gitignore
-
-	> touch .gitignore
-	>> 创建一个名为.gitignore的文件，写入此文件中的文件名或者目录代表不纳入版本控制中
+6. Git忽略
+	``` git
+	vi .gitignore
+	```
+	> 创建一个名为.gitignore的文件，写入此文件中的文件名或者目录代表不纳入版本控制中
 
 7. 查看状态
-	> git status
+	``` git
+	git status
+	```
 
 8. 查看修改
-	> git diff
-
-	> git diff src/com/example/test/MainActivity.java
+	``` git
+	git diff
+	git diff src/com/example/test/MainActivity.java
+	```
 
 9. 撤销修改
-	> git checkout src/com/example/test/MainActivity.java
-	>> 只适用于那些还没有执行过add命令的文件
 
-	> git reset HEAD src/com/example/test/MainActivity.java
-	>> 已经添加了，取消添加使用的是reset命令
+	``` git
+	git checkout src/com/example/test/MainActivity.java
+	```
+	> 只适用于那些还没有执行过add命令的文件
+
+	``` git
+	git reset HEAD src/com/example/test/MainActivity.java
+	```
+	> 已经添加了，取消添加使用的是reset命令
 
 10. 查看提交记录
-	> git log
+	``` git
+	git log
+	```
+	> 只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
 
-	> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
-	>> 只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
-
-	> git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
-	>> 查看提交记录具体修改内容，在命令中加入-p参数
+	``` git
+	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
+	```
+	
+	``` git
+	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
+	```
+	> 查看提交记录具体修改内容，在命令中加入-p参数
 
 11. 分支
-	> git branch –a
-	>> 查看分支
+	查看分支
+	``` git
+	git branch –a
+	```
+	创建分支
+	``` git
+	git branch version1.0
+	```
 
-	> git branch version1.0
-	> 创建分支
+	切换分支
+	``` git
+	git checkout version1.0
+	```
 
-	> git checkout version1.0
-	>> 切换分支
+	删除分支
+	``` git
+	git branch -D version1.0
+	```
 
-	> git branch -D version1.0
-	>> 删除分支
+	*主线为 master分支
+	*分支前面*号代表当前所处的分支
 
-	>> 主线为 master分支
-	>> 分支前面*号代表当前所处的分支
+
 
 12. 合并
-	> git checkout master
-
-	> git merge version1.0
+	需要先切换到需要合并的分支上
+	``` git
+	git checkout master
+	git merge version1.0
+	```
 
 13. 与远程版本库协作
-	> git clone https://github.com/exmaple/test.git
-	
-	> git push origin master
-	>> 本地修改的内容同步到远程版本库
-	
-	> git fetch origin master
-	> git diff origin/master
-	> git merge origin/master
-	>> 将远程版本库上的修改同步到本地
+	``` git
+	git clone https://github.com/exmaple/test.git
+	```
+	 本地修改的内容同步到远程版本库
+	``` git
+	git push origin master
+	```
 
-	执行这个命令后，就会将远程版本库上的代码同步到本地，
-	却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，
-	通过diff命令来查看远程版本库上修改内容，
-	再调用merge命令将origin/master分支上的修改合并到主分支上
+	将远程版本库上的修改同步到本地
+	``` git
+	git fetch origin master
+	git diff origin/master
+	git merge origin/master
+	```
+	执行这个命令后，就会将远程版本库上的代码同步到本地，却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，通过diff命令来查看远程版本库上修改内容，再调用merge命令将origin/master分支上的修改合并到主分支上
+
 
 	从远程版本库上获取最新的代码并且合并到本地
+	``` git
 	git pull origin master
+	```
 
-	将远程仓库与本地仓库关联
-	git remote add origin git@github.com:username/repository.git
-
-	第一次推送master分支,-u参数，
-	把本地的master分支内容推送的远程新的master分支，
-	还会把本地的master分支和远程的master分支关联起来
-	git push -u origin master
-
--------------------------------------------------------------------------------------
-
-
-1、拣选合并
+***
+### 一、拣选合并
 
 拣选合并可以拣选分支上1个或多个提交进行合并，并保留原分支的提交注释信息。
 
@@ -136,7 +167,7 @@ LogID 即哈希值改变，注释信息不变
 注：合并产生conflict，解决了conflict，用 git add  conflict文件，然后用git commit不带注释可保留原提交注释。
 
 
-2、压合合并
+### 二、压合合并
 
 压合合并可以将分支上1个或多个提交压合成1个提交进行合并，不保留了原分支的注释信息，如果原分支的几个提交都是解决同一个问题，这时候可以用压合合并，把几个提交压合成一个提交，写新的注释信息。
 
@@ -164,7 +195,7 @@ git commit -m " 注释 "
 git merge --squash 后面如果跟着哈希值，不管跟几个哈希值，不管哈希值的顺序，合并从分叉后的以第一个哈希值到后面跟着的最后一个哈希值之间的修改
 注：合并产生conflict，解决了conflict，用 git add conflict文件
 
-3、分支合并
+### 三、分支合并
 
 合并前：
           A---B---C      top
@@ -187,11 +218,8 @@ top上的提交增加到master上，并新增一条合并信息。
 注：合并产生conflict，解决了conflict，用 git add conflict文件
 
 
-
-
-
-，，，，，，，，，，，，，，，，
-、待功能开发完毕之后，合并到develop分支，合并的时候有两种方式： 
+***
+待功能开发完毕之后，合并到develop分支，合并的时候有两种方式： 
     A、压合合并：将在issue1上的修改作为一次提交到develop分支上 
        git checkout develop 
        git merge --squash issue1
