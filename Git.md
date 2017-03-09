@@ -87,59 +87,62 @@ Git：<https://git-scm.com/download/>
 	> 查看提交记录具体修改内容，在命令中加入-p参数
 
 11. 分支
-	查看分支
 	``` git
 	git branch –a
 	```
-	创建分支
+	> 查看分支
+	
 	``` git
 	git branch version1.0
 	```
+	> 创建分支
 
-	切换分支
+	
 	``` git
 	git checkout version1.0
 	```
+	> 切换分支
 
-	删除分支
+	
 	``` git
 	git branch -D version1.0
 	```
+	> 删除分支
 
-	*主线为 master分支
-	*分支前面*号代表当前所处的分支
-
-
+	>> 主线为 master分支
+	
+	>> 分支前面*号代表当前所处的分支
 
 12. 合并
-	需要先切换到需要合并的分支上
 	``` git
 	git checkout master
 	git merge version1.0
 	```
+	> 需要先切换到需要合并的分支上
 
 13. 与远程版本库协作
 	``` git
 	git clone https://github.com/exmaple/test.git
 	```
-	 本地修改的内容同步到远程版本库
+	 
 	``` git
 	git push origin master
 	```
+	> 本地修改的内容同步到远程版本库
 
-	将远程版本库上的修改同步到本地
 	``` git
 	git fetch origin master
 	git diff origin/master
 	git merge origin/master
 	```
-	执行这个命令后，就会将远程版本库上的代码同步到本地，却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，通过diff命令来查看远程版本库上修改内容，再调用merge命令将origin/master分支上的修改合并到主分支上
-
-
-	从远程版本库上获取最新的代码并且合并到本地
+	> 将远程版本库上的修改同步到本地
+	
+	>> 执行这个命令后，就会将远程版本库上的代码同步到本地，却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，通过diff命令来查看远程版本库上修改内容，再调用merge命令将origin/master分支上的修改合并到主分支上
+	
 	``` git
 	git pull origin master
 	```
+	> 从远程版本库上获取最新的代码并且合并到本地
 
 ***
 ### 一、拣选合并
