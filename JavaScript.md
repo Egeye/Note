@@ -10,6 +10,7 @@
 	```JavaScript
 	document.getElementById('eleId').style.display = 'none';
 	$('#eleId').removeAttr('style');
+	
 	if(testFlag){
 		$('#eleId').css('display','none');
 		testFlag = false;
@@ -17,12 +18,11 @@
 		$('#eleId').css('display','block');
 		testFlag = true;
 	}
-	let testFlag = true;
 	```
 
 2. 数组去重
 	```JavaScript
-	function deviceResultGet(datas) 
+	function getDatas(datas) 
 	{
 		// resourceDatas = [x,x,x,x,x,x]
 		for (let i = 0; i < datas.length; i++)
@@ -56,10 +56,11 @@
 	let strDate = date.getDate();
 
 	if (month >= 1 && month <= 9) {
-	month = '0' + month;
+		month = '0' + month;
 	}
+	
 	if (strDate >= 0 && strDate <= 9) {
-	strDate = '0' + strDate;
+		strDate = '0' + strDate;
 	}
 
 	let currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
