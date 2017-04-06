@@ -1,5 +1,3 @@
-## JavaScript
-#### 网址
 
 1. http://blog.csdn.net/xuemoyao/article/details/19021659
 2. http://www.tuicool.com/articles/VF3Uf2E 
