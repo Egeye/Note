@@ -104,11 +104,11 @@
 		|| intMonth == 7
 		|| intMonth == 8
 		|| intMonth == 10
-		|| intMonth ==12) && (intDay > 31 || intDay < 1)) return false;
-		if ((intMonth == 4 || intMonth == 6 || intMonth ==9 || intMonth == 11) && (intDay > 30 || intDay < 1)) return false;
-		if (intMonth==2)
+		|| intMonth == 12) && (intDay > 31 || intDay < 1)) return false;
+		if ((intMonth == 4 || intMonth == 6 || intMonth == 9 || intMonth == 11) && (intDay > 30 || intDay < 1)) return false;
+		if (intMonth == 2)
 		{
-			if (intDay<1) return false;
+			if (intDay < 1) return false;
 			boolLeapYear = false;
 
 			if ((intYear % 100) == 0)
