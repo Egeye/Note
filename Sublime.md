@@ -73,6 +73,8 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 
 > （http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io）
 
+> https://packagecontrol.io/packages/Material%20Theme
+
 #### 主题设置
 
 ------------------------ Material Theme ---------------------------------
