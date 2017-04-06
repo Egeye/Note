@@ -78,7 +78,7 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 #### 主题设置
 
 * Material Theme
-
+```Jason
 {
 	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
 	"always_show_minimap_viewport": true,
@@ -162,10 +162,10 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 	"trim_trailing_white_space_on_save": true,
 	"update_check": false
 }
-
+```
 
 * Aprosopo Theme
-
+```Jason
 {
 	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
 	"aprosopo_active_bar": true,
@@ -201,4 +201,4 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 	"trim_trailing_white_space_on_save": true,
 	"update_check": false
 }
-
+```
