@@ -72,3 +72,128 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 * Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》	
 
 > （http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io）
+
+#### 主题设置
+------------------------ Material Theme ---------------------------------
+{
+	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
+	"always_show_minimap_viewport": true,
+	"aprosopo_active_bar": true,
+	"aprosopo_dark_aqua": true,
+	"aprosopo_dark_dirty_red": true,
+	"aprosopo_sidebar_font_xlarge": true,
+	"aprosopo_sidebar_tree_large": true,
+	"aprosopo_solid_tab": true,
+	"aprosopo_statusbar_font_medium": true,
+	"auto_match_enabled": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"draw_minimap_border": true,
+	"draw_white_space": "false",
+	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		"*.docx",
+		"*.mp4",
+		"*.doc"
+	],
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 11,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"margin": 1,
+	"material_theme_accent_acid-lime": true,
+	"material_theme_accent_blue": true,
+	"material_theme_accent_brba": true,
+	"material_theme_accent_bright-teal": true,
+	"material_theme_accent_cyan": true,
+	"material_theme_accent_graphite": true,
+	"material_theme_accent_indigo": true,
+	"material_theme_accent_lime": true,
+	"material_theme_accent_orange": true,
+	"material_theme_accent_pink": true,
+	"material_theme_accent_purple": true,
+	"material_theme_accent_red": true,
+	"material_theme_accent_scrollbars": true,
+	"material_theme_accent_sky": true,
+	"material_theme_accent_tomato": true,
+	"material_theme_accent_yellow": true,
+	"material_theme_arrow_folders": true,
+	"material_theme_big_fileicons": true,
+	"material_theme_bold_tab": true,
+	"material_theme_bright_scrollbars": true,
+	"material_theme_bullet_tree_indicator": true,
+	"material_theme_compact_panel": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_disable_fileicons": true,
+	"material_theme_disable_folder_animation": true,
+	"material_theme_disable_tree_indicator": true,
+	"material_theme_panel_separator": true,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
+	"material_theme_tabs_autowidth": true,
+	"material_theme_tabs_separator": true,
+	"material_theme_tree_headings": true,
+	"overlay_scroll_bars": "enabled",
+	"save_on_focus_lost": false,
+	"show_encoding": true,
+	"spell_check": false,
+	"theme": "Material-Theme-Darker.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false
+}
+---------------------------------------------------------
+
+---------------------- Aprosopo Theme -----------------------------------
+{
+	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
+	"aprosopo_active_bar": true,
+	"aprosopo_dark_aqua": true,
+	"aprosopo_dark_dirty_red": true,
+	"aprosopo_sidebar_font_xlarge": true,
+	"aprosopo_sidebar_tree_large": true,
+	"aprosopo_solid_tab": true,
+	"aprosopo_statusbar_font_medium": true,
+	"auto_match_enabled": true,
+	"bold_folder_labels": false,
+	"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Egeye (SL).tmTheme",
+	"draw_minimap_border": true,
+	"draw_white_space": "false",
+	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		"*.docx",
+		"*.mp4",
+		"*.doc"
+	],
+	"font_size": 11,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": false,
+	"show_encoding": true,
+	"spell_check": false,
+	"theme": "Aprosopo Dark@st3.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false
+}
+---------------------------------------------------------
