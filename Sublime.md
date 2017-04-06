@@ -74,6 +74,7 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 > （http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io）
 
 #### 主题设置
+
 ------------------------ Material Theme ---------------------------------
 {
 	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
