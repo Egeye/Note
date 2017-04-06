@@ -7,65 +7,65 @@
 
 ### 代码片段
 1. 获取标签id，来改变该style
-  ```JavaScript
-  document.getElementById('k5Resource').style.display = 'none';
-  $('#k5Resource').removeAttr('style');
-  if(testFlag){
-    $('#k5Resource').css('display','none');
-    testFlag = false;
-  }else{
-  	$('#k5Resource').css('display','block');
-    testFlag = true;
-  }
-    let testFlag = true;
-  ```
+	```JavaScript
+	document.getElementById('eleId').style.display = 'none';
+	$('#eleId').removeAttr('style');
+	if(testFlag){
+		$('#eleId').css('display','none');
+		testFlag = false;
+	}else{
+		$('#eleId').css('display','block');
+		testFlag = true;
+	}
+	let testFlag = true;
+	```
 
 2. 数组去重
-  ```JavaScript
-  function deviceResultGet(datas) 
-  {
-    // resourceDatas = [x,x,x,x,x,x]
-    for (let i = 0; i < datas.length; i++)
-    {
-        let targetResource = datas[i];
-        resourceDatas.push(targetResource);
-    }
+	```JavaScript
+	function deviceResultGet(datas) 
+	{
+		// resourceDatas = [x,x,x,x,x,x]
+		for (let i = 0; i < datas.length; i++)
+		{
+			let targetResource = datas[i];
+			resourceDatas.push(targetResource);
+		}
 
-    let arrObj = {};
-    resourceDatas.map((e) => {
-      arrObj[e.id] = e;
-    })
+		let arrObj = {};
+		resourceDatas.map((e) => {
+			arrObj[e.id] = e;
+		})
 
-    let keys = [];
-    for (let property in arrObj) 
-    {
-      keys.push(arrObj[property]);
-    }
+		let keys = [];
+		for (let property in arrObj) 
+		{
+			keys.push(arrObj[property]);
+		}
 
-    // result
-    resourceDatas = keys;
-  }
-  ```
+		// result
+		resourceDatas = keys;
+	}
+	```
 
 3. 时间格式
-  ```JavaScript
-  let date = new Date();
-  let seperator1 = '/';
-  let seperator2 = ':';
-  let month = date.getMonth() + 1;
-  let strDate = date.getDate();
+	```JavaScript
+	let date = new Date();
+	let seperator1 = '/';
+	let seperator2 = ':';
+	let month = date.getMonth() + 1;
+	let strDate = date.getDate();
 
-  if (month >= 1 && month <= 9) {
-    month = '0' + month;
-  }
-  if (strDate >= 0 && strDate <= 9) {
-    strDate = '0' + strDate;
-  }
+	if (month >= 1 && month <= 9) {
+	month = '0' + month;
+	}
+	if (strDate >= 0 && strDate <= 9) {
+	strDate = '0' + strDate;
+	}
 
-  let currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + ' ' + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();     
-  ```
+	let currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+		+ ' ' + date.getHours() + seperator2 + date.getMinutes()
+		+ seperator2 + date.getSeconds();     
+	```
 
 4. substring、substr 
 	```JavaScript
@@ -76,20 +76,20 @@
 	let res1 = str.substr(3);   // res1 is "ve"
 
 	/**
-	 * [substring有两个参数时，
-	 * 第一个参数表示从字符串的第几位开始截取，
-	 * 第二个参数表示截取到字符串的第几位]
-	 */
+	* [substring有两个参数时，
+	* 第一个参数表示从字符串的第几位开始截取，
+	* 第二个参数表示截取到字符串的第几位]
+	*/
 	let result2 = str.substring(3, 4); // result2 is "v"
 	let result3 = str.substring(3, 2); // result3 is "0"
 
 	let res2 = str.substring(3, 4); // res2 is "ve"
 	let res3 = str.substring(3, 2); // res3 is "ve"
 	/**
-	 * [substr有两个参数时，
-	 * 第一个参数表示从字符串的第几位开始截取，
-	 * 第二个参数表示截取多少位字符串]
-	 */
+	* [substr有两个参数时，
+	* 第一个参数表示从字符串的第几位开始截取，
+	* 第二个参数表示截取多少位字符串]
+	*/
 	```
 
 5. 年月格式检查（平闰年）
@@ -97,21 +97,16 @@
 	function checkIsCorrectDate(intYear, intMonth, intDay)
 	{
 		let boolLeapYear;
-
 		if (isNaN(intYear) || isNaN(intMonth) || isNaN(intDay)) return false;
-
 		if (intMonth > 12 || intMonth < 1) return false;
-
 		if ((intMonth == 1
-			|| intMonth == 3
-			|| intMonth == 5
-			|| intMonth == 7
-			|| intMonth == 8
-			|| intMonth == 10
-			|| intMonth ==12) && (intDay > 31 || intDay < 1)) return false;
-
+		|| intMonth == 3
+		|| intMonth == 5
+		|| intMonth == 7
+		|| intMonth == 8
+		|| intMonth == 10
+		|| intMonth ==12) && (intDay > 31 || intDay < 1)) return false;
 		if ((intMonth == 4 || intMonth == 6 || intMonth ==9 || intMonth == 11) && (intDay > 30 || intDay < 1)) return false;
-
 		if (intMonth==2)
 		{
 			if (intDay<1) return false;
@@ -141,8 +136,10 @@
 
 6. "xxxHolic.({0})"
 	```JavaScript	
-	function strReplace(str, num) {
-		return str.replace(/\{([^{}]*)\}/g, function (a, b) {
+	function strReplace(str, num) 
+	{
+		return str.replace(/\{([^{}]*)\}/g, function (a, b) 
+		{
 			let r = num[b];
 			return typeof r === 'string' || typeof r === 'number' ? r : a;
 		});
