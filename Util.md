@@ -9,11 +9,10 @@
 checkIPv4Address(value) {
   try {
     const pattern = /^((\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])$/;
-    const resPattern = new RegExp(pattern);
-    const res = resPattern.test(value);
-    return res;
+    const result = pattern.test(value);
+    return result;
   } catch (e) {
-    Logger.error(e.stack);
+    console.log(err.stack);
   }
   return false;
 }
@@ -26,14 +25,20 @@ checkIPv4Address(value) {
  * @param   {string} value [[Description]]
  * @returns {boolean} Single-byte lowercase character: true, Otherwise: false
  */
-isAlphabeticLowerCaseCharacter(value) {
+function isAlphabeticLowerCase(value) {
   try {
     const pattern = /[a-z]+/;
-    const resPattern = new RegExp(pattern);
-    const res = resPattern.test(value);
-    return res;
+
+    /** Single-byte uppercase character */
+    // const pattern = /[A-Z]+/;
+    
+    /** Single-byte numbers */
+    // const pattern = /[0-9]+/;
+    
+    const result = pattern.test(value);
+    return result;
   } catch (err) {
-    Logger.error(err.stack);
+    console.log(err.stack);
   }
   return false;
 }
