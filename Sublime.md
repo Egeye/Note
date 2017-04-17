@@ -21,6 +21,8 @@
 18. Ctrl + Tab 当前窗口中的标签页切换
 19. Ctrl + ~ 组合键，打开Console窗口
 
+***
+
 1. Ctrl + Shift + A 选择光标位置父标签对儿
 2. Ctrl + Shift + D 复制光标所在整行，插入在该行之前
 3. ctrl + shift + F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找
@@ -35,10 +37,14 @@
 12. Ctrl + Shift + ] 展开代码
 13. Ctrl + Shift + Enter 光标前插入行
 
+***
+
 1. Ctrl + PageDown 、Ctrl + PageUp 文件按开启的前后顺序切换
 2. Ctrl + F2 设置书签
 3. Ctrl + / 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）
 4. Ctrl + 鼠标左键 可以同时选择要编辑的多处文本
+
+***
 
 1. Alt + Shift + 2 左右分屏-2列
 2. Alt + Shift + 3 左右分屏-3列
@@ -47,17 +53,25 @@
 5. Alt + Shift + 8 垂直分屏-2屏
 6. Alt + Shift + 9 垂直分屏-3屏
 
+***
+
 1. Alt + . 闭合当前标签
 2. Alt + F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑
+
+***
 
 1. Shift + 鼠标右键（或使用鼠标中键）可以用鼠标进行竖向多行选择
 2. Shift + F2 上一个书签
 3. Shift + Tab 去除缩进
 
+***
+
 1. F2 下一个书签
 2. F6 检测语法错误
 3. F9 行排序(按a-z)
 4. F11 全屏模式
+
+***
 
 * 进入命令面板（ctrl + shift+ p）
 
@@ -67,9 +81,15 @@ http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package
 ***
 
 #### 已安装插件	
-* BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号	
+
+* BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号
+
 * Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
-* Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》	
+
+* Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》
+
+* Markdown Preview 
+
 
 > （http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io）
 
