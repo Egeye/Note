@@ -8,6 +8,11 @@ Git：<https://git-scm.com/download/>
 	git config --global user.name "Egeye"
 	git config --global user.email "egeye4y@gmail.com"
 	```
+	> 查看配置
+	``` git
+	git config user.name
+	git config user.email
+	```
 	
 2. 创建代码仓库 
 	``` git
