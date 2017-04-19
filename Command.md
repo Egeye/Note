@@ -27,9 +27,7 @@
 11. pwd
 12. 查找文件命令：find / -name *pg-log*
 13. sftp 10.167.153.67
-    > sftp> pwd
-    
-    > sftp> get xxxx
+    > sftp> get xxxx
 
 ### Setting
 1. 配置隧道时侦听端口可能会被占用
