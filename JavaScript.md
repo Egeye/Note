@@ -3,6 +3,15 @@
 2. http://www.tuicool.com/articles/VF3Uf2E 
 > [译]ECMAScript 6: 使用 Object.assign() 合并对象
 
+### ES6文档
+> https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
+
+> http://localhost:3000/#/component/ifcomment?_k=u2osc1
+
+> http://reactjs.cn/react/docs/tutorial.html
+
+> https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
+
 ### 代码片段
 1. 获取标签id，来改变该style
 	```JavaScript
