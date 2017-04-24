@@ -6,8 +6,24 @@
 
 * Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》
 
-* Markdown Preview
+* MarkdownLivePreview
 
+* SideBarEnhancements
+
+* HTML-CSS-JS Prettify(need node.js)
+
+* DocBlockr
+
+* GitGutter Git指示器
+
+* SublimeCodeIntel
+
+* jquery
+
+
+***
+
+#### 网站
 
 > http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
 
