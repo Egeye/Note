@@ -1,6 +1,3 @@
-# Sublime Text
-***
-##### Keymap
 1. Ctrl + D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）
 2. Ctrl + G 跳转到相应的行
 3. Ctrl + J 合并行（已选择需要合并的多行时）
@@ -74,59 +71,3 @@
 ***
 
 * 进入命令面板（ctrl + shift+ p）
-
-* Sublime Text 如何安装Package Control和插件
-http://jokerliang.com/sublime-text-2-install-package-control-and-awesome-package.html
-
-***
-
-#### 已安装插件
-
-* BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号
-
-* Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
-
-* Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》
-
-* Markdown Preview
-
-
-> http://www.css88.com/archives/5858?f=tt&hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
-
-> https://packagecontrol.io/packages/Material%20Theme
-
-* Sublime Text 3 plugin sublimelinter
-
-> http://sublimelinter.readthedocs.io/en/latest/usage.html
-
-#### 主题设置
-```Jason
-{
-	"TortoiseProcPath": "D:\\DevSoftware\\SVN\\bin\\TortoiseProc.exe",
-	"auto_match_enabled": true,
-	"bold_folder_labels": false,
-	"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Egeye (SL).tmTheme",
-	"draw_minimap_border": true,
-	"draw_white_space": "false",
-	"fade_fold_buttons": false,
-	"file_exclude_patterns":
-	[
-		"*.docx",
-		"*.mp4",
-		"*.doc"
-	],
-	"font_size": 11,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"save_on_focus_lost": false,
-	"show_encoding": true,
-	"spell_check": false,
-	"theme": "Aprosopo Dark@st3.sublime-theme",
-	"trim_trailing_white_space_on_save": true,
-	"update_check": false
-}
-```
