@@ -11,7 +11,8 @@
 
 > https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
 
-3. http://blog.csdn.net/xuemoyao/article/details/19021659
+3. $.extend()方法和(function($){...})(jQuery)
+> http://blog.csdn.net/xuemoyao/article/details/19021659
 
 4. [译]ECMAScript 6: 使用 Object.assign() 合并对象
 > http://www.tuicool.com/articles/VF3Uf2E 
