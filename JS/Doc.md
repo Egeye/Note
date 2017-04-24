@@ -2,6 +2,8 @@
 1. React.js 小书
 > http://huziketang.com/books/react/lesson7
 
+> https://github.com/reactnativecn/react-native-guide
+
 ***
 
 2. ES6文档
