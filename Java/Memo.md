@@ -2,6 +2,7 @@
 * http://blog.csdn.net/caihuangshi/article/details/51265324 【JDBC连接】
 * http://www.cnblogs.com/xiohao/p/3633641.html 【hibernate配置文件】
 * http://blog.csdn.net/gebitan505/article/details/44455235/ 【Spring+SpringMVC+MyBatis】
+* http://blog.csdn.net/zhuyucheng123/article/details/22216447 【SpringMVC jar包】
 
 ***
 
