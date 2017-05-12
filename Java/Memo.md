@@ -1,6 +1,7 @@
 * http://lib.csdn.net/sinat_36900848/265044/structure/Java%20EE
 * http://blog.csdn.net/caihuangshi/article/details/51265324 【JDBC连接】
 * http://www.cnblogs.com/xiohao/p/3633641.html 【hibernate配置文件】
+* http://blog.csdn.net/gebitan505/article/details/44455235/ 【Spring+SpringMVC+MyBatis】
 
 ***
 
