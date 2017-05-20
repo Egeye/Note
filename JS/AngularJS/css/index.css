@@ -1,0 +1,22 @@
+
+.cities {
+    background-color:black;
+    color:white;
+    margin:20px;
+    padding:20px;
+}
+
+.appBody {
+	margin: 25px;
+}
+
+.appBox {
+	width: 300px;
+	height: auto;
+	min-width: 300px;
+	border: 1px solid #D1D0D0;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

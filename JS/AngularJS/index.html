@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS Demo</title>
+	<script src="libs/angular.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script> -->
+	<!-- <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<style>
+		input.ng-invalid {
+		    background-color: #FF5B5B;
+		}
+	</style>
+</head>
+
+<body class="appBody">
+
+<h1 align="center">AngularJS</h1>
+
+
+<hr>
+# AngularJS 指令<br>
+
+	AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
+
+	1. ng-app 指令定义一个 AngularJS 应用程序。<br>
+	2. ng-init 初始化数据的方式(不是很常见)
+	3. ng-model 指令把元素值(比如输入域的值)绑定到应用程序。<br>
+		> ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)<br>
+	4. ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>
+	5. ng-controller 定义了控制器. <br>
+	6. ng-repeat 指令会重复一个 HTML 元素<br><br>
+
+	调用指令<br>
+	(1) 元素名<br>
+	(2) 属性<br>
+	(3) 类名<br>
+	(4) 注释<br><br>
+
+	自定义指令： .directive
+
+<!-- Example 1 -->
+<div ng-app="" style="border: 1px solid #D1D0D0; padding-left: 20px; padding-right: 20px; width: 300px; margin: 0px">
+	<p>Username: <input type="text" name="username" ng-model="username" required=""></p>
+	<h4>Hello {{ username }}</h4>
+</div>
+
+<!-- Example 2 -->
+<div id="app1" ng-app="myApp1" ng-controller="myController1" class="appBox">
+	名: <input type="text" ng-model="firstName" required><br>
+	姓: <input type="text" ng-model="lastName"><br>
+	<br>
+	姓名: {{firstName + " " + lastName}}
+	<h4>Full name: {{ fullName() }}</h4>
+</div>
+
+<!-- Example 3 -->
+<form id="app2" ng-app="myApp2" name="myForm" class="appBox">
+    Email:
+    <input type="email" name="myAddress" ng-model="text"><br>
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+    <!-- 提示信息会在 ng-show 属性返回 true 的情况下显示 -->
+</form>
+
+<br><br>
+# AngularJS Scope(作用域)<br>
+	Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。<br>
+	Scope 是一个对象，有可用的方法和属性。<br>
+	Scope 可应用在视图和控制器上<br><br>
+
+	* 根作用域
+		> 所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。
+
+<!-- Example 4 ng-repeat -->
+<div ng-app="myAppLi" id="appLi" ng-controller="controllerLi">
+	<li ng-repeat="x in liNames">{{ x }}</li>
+</div>
+
+
+
+# AngularJS 过滤器<br>
+	> 过滤器可以使用一个管道字符（|）添加到表达式和指令中。<br>
+	> AngularJS 过滤器可用于转换数据<br>
+
+<table border="solid">
+	<tr>
+		<td>Filter</td>
+		<td>Description</td>
+	</tr>
+
+	<tr>
+		<td>currency</td>
+		<td>格式化数字为货币格式。</td>
+	</tr>
+
+	<tr>
+		<td>filter</td>
+		<td>从数组项中选择一个子集。</td>
+	</tr>
+
+	<tr>
+		<td>lowercase</td>
+		<td>格式化字符串为小写。</td>
+	</tr>
+
+	<tr>
+		<td>orderBy</td>
+		<td>根据某个表达式排列数组。</td>
+	</tr>
+
+	<tr>
+		<td>uppercase</td>
+		<td>格式化字符串为大写。</td>
+	</tr>
+</table>
+
+
+<div id="appFId" ng-app="appF">
+	<h4>{{ 11.121213 | number:2 }}</h4>
+	<h4>
+		{{
+			[{"age": 20,"id": 10,"name": "iphone"},
+			{"age": 12,"id": 11,"name": "sunm xing"},
+			{"age": 44,"id": 12,"name": "test abc"}
+			] | filter:{'name':'iphone'}
+		}}
+	</h4>
+
+    <!-- 从前面开始截取6位 -->
+	<h4>{{"1234567890" | limitTo :6}}</h4>
+
+	<!-- 从后面开始截取4位 -->
+	<h4>{{"1234567890" | limitTo:-4}}</h4>
+
+	<!-- 根id降序排 -->
+	<h4>
+		{{ [{"age": 20,"id": 10,"name": "iphone"},
+		{"age": 12,"id": 11,"name": "sunm xing"},
+		{"age": 44,"id": 12,"name": "test abc"}
+		] | orderBy:'id':true }}
+	</h4>
+
+	<!-- 根据id升序排 -->
+	<h4>
+		{{ [{"age": 20,"id": 10,"name": "iphone"},
+		{"age": 12,"id": 11,"name": "sunm xing"},
+		{"age": 44,"id": 12,"name": "test abc"}
+		] | orderBy:'id' }}
+	</h4>
+</div>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+<script src="js/index.js"></script>
+
+<!-- <script type="text/javascript">
+	var app = angular.module('myApp1', []);
+	app.controller('myController1', function($scope) {
+		$scope.firstName = "Egeye";
+		$scope.lastName = "Ignativ";
+		$scope.fullName = () => { return $scope.firstName + ' ' + $scope.lastName };
+	});
+
+	angular.module('myAppLi', []).controller('controllerLi', ($scope) => { $scope.liNames = ['Egeye', 'Octavio', 'Will'] } );
+
+	angular.bootstrap(document.getElementById("app1"), ['myApp1']);
+	angular.bootstrap(document.getElementById("app2", ['myApp2']));
+	angular.bootstrap(document.getElementById("appLi"), ['myAppLi']);
+
+</script> -->
+
+
+</body>
+</html>

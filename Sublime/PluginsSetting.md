@@ -1,25 +1,36 @@
 #### 已安装插件
 
-* BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号
+1. BracketHighlighter 该插件提供行数列高亮的各种配对的语法符号
 
-* Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
+2. Alignment （代码对齐）选中要调整的行，然后按 Ctrl+ Alt + A
 
-* Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》
+3. Colorpicker 使用一个取色器改变颜色 ctrl + shift + c》
 
-* MarkdownLivePreview
+4. MarkdownLivePreview
 
-* SideBarEnhancements
+5. SideBarEnhancements
 
-* HTML-CSS-JS Prettify(need node.js)
+6. HTML-CSS-JS Prettify(need node.js)
 
-* DocBlockr
+7. DocBlockr
 
-* GitGutter Git指示器
+8. GitGutter Git指示器
 
-* SublimeCodeIntel
+9. SublimeCodeIntel
 
-* jquery
+10. jquery
 
+11. IMESupport
+
+12. GBK Support
+
+13. JsFormat
+
+14. SublimeLinter
+
+15. A File Icon
+
+16. Babel
 
 ***
 
