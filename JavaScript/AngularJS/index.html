@@ -3,10 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>AngularJS Demo</title>
-	<script src="libs/angular.js"></script>
+	<script src="libs/js/angular.js"></script>
+	<script src="libs/js/angular-animate.js"></script>
+	<script src="libs/js/angular-route.js"></script>
+	<script src="libs/js/jquery-3.2.1.js"></script>
+	<script src="libs/js/utils.js"></script>
+	<script src="libs/js/tether.js"></script>
+	<script src="libs/js/bootstrap.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script> -->
 	<!-- <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="libs/css/bootstrap.css">
 	<style>
 		input.ng-invalid {
 		    background-color: #86D5F6;
@@ -22,44 +29,57 @@
 
 <div class="appBody">
 
-	<h3 align="center"># AngularJS 指令</h3>
+	<div ng-app="">
+		<button align="right" class="btn btn-info" ng-click="appCommand = !appCommand"><b># AngularJS 指令</b></button></b>
+		<div ng-show="appCommand">
+			AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
 
-		AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
+			1. ng-app 指令定义一个 AngularJS 应用程序。<br>
+			2. ng-init 初始化数据的方式(不是很常见)
+			3. ng-model 指令把元素值(比如输入域的值)绑定到应用程序。<br>&nbsp;&nbsp;&nbsp;
+				> ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)<br>
+			4. ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>
+			5. ng-controller 定义了控制器. <br>
+			6. ng-repeat 指令会重复一个 HTML 元素<br>
+			7. ng-option 指令来创建一个下拉列表<br>
+			8. ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性<br>
+			9. ng-show 指令隐藏或显示一个 HTML 元素<br>
+			10. ng-hide 指令用于隐藏或显示 HTML 元素<br>
+			11. ng-click 指令定义了 AngularJS 点击事件<br>
+			12. ng-include 指令来包含 HTML<br><br>
 
-		1. ng-app 指令定义一个 AngularJS 应用程序。<br>
-		2. ng-init 初始化数据的方式(不是很常见)
-		3. ng-model 指令把元素值(比如输入域的值)绑定到应用程序。<br>
-			> ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)<br>
-		4. ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>
-		5. ng-controller 定义了控制器. <br>
-		6. ng-repeat 指令会重复一个 HTML 元素<br>
-		7. ng-option 指令来创建一个下拉列表<br><br>
+			调用指令<br>
+				(1) 元素名<br>
+				(2) 属性<br>
+				(3) 类名<br>
+				(4) 注释<br><br>
 
-		调用指令<br>
-			(1) 元素名<br>
-			(2) 属性<br>
-			(3) 类名<br>
-			(4) 注释<br><br>
+			自定义指令： .directive
+		</div><br>
 
-		自定义指令： .directive
-
-	<!-- Example 1 -->
-	<div ng-app="" style="border: 1px solid #D1D0D0; padding-left: 20px; padding-right: 20px; width: auto; margin: 0px">
-		<p>Username: <input type="text" name="username" ng-model="username" required=""></p>
-		<p>Hello {{ username }}</p>
+		<!-- Example 1 -->
+		<button class="btn btn-outline-info" ng-click="btnStaEx1 = !btnStaEx1">> Example 1</button>
+		<div style="border: 1px solid #D1D0D0; padding-left: 20px; padding-right: 20px; width: auto; margin: 0px" ng-show="btnStaEx1">
+			<p>Username: <input type="text" name="username" ng-model="username" required=""></p>
+			<p>Hello {{ username }}</p>
+		</div>
 	</div>
 
 	<!-- Example 2 -->
-	<div id="app1" ng-app="myApp1" ng-controller="myController1" class="appBox">
-		名: <input type="text" ng-model="firstName" required><br>
-		姓: <input type="text" ng-model="lastName"><br>
-		<br>
-		姓名: {{firstName + " " + lastName}}
-		<p>Full name: {{ fullName() }}</p>
-	</div>
+	<button class="btn btn-outline-info" data-toggle="collapse" data-target="#demo">> Example 2</button>
+	<div class="collapse in" id="demo">
+		<div id="app1" ng-app="myApp1" ng-controller="myController1" class="appBox">
+			名: <input type="text" ng-model="firstName" required><br>
+			姓: <input type="text" ng-model="lastName"><br>
+			<br>
+			姓名: {{firstName + " " + lastName}}
+			<p>Full name: {{ fullName() }}</p>
+		</div>
+	</div><br>
 
 	<!-- Example 3 -->
-	<form id="app2" ng-app="myApp2" name="myForm" class="appBox">
+	<button class="btn btn-outline-info" data-toggle="collapse" data-target="#app2">> Example 3</button>
+	<form id="app2" ng-app="myApp2" name="myForm" class="appBox collapse in">
 	    Email:
 	    <input type="email" name="myAddress" ng-model="text"><br>
 	    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
@@ -67,59 +87,66 @@
 	</form>
 
 	<br><br>
-	<h3 align="center"># AngularJS Scope(作用域)</h3>
+	<button class="btn btn-warning" data-toggle="collapse" data-target="#ajs"><b># AngularJS Scope(作用域)</b></button>
+	<br>
+	<div id="ajs" class="collapse in">
 		Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。<br>
 		Scope 是一个对象，有可用的方法和属性。<br>
 		Scope 可应用在视图和控制器上<br><br>
 
 		* 根作用域
 			> 所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。
-
-	<!-- Example 4 ng-repeat -->
-	<div ng-app="myAppLi" id="appLi" ng-controller="controllerLi">
-		<li ng-repeat="x in liNames">{{ x }}</li>
 	</div>
 
+	<!-- Example 4 ng-repeat -->
+	<button class="btn btn-outline-warning" data-target="#appLi" data-toggle="collapse">> Example 4 ng-repeat</button>
+	<div ng-app="myAppLi" id="appLi" ng-controller="controllerLi" class="collapse in">
+		<li ng-repeat="x in liNames">{{ x }}</li>
+	</div>
+	<br><br>
 
-
-	<h3 align="center"># AngularJS 过滤器</h3>
+	<button class="btn btn-danger" data-toggle="collapse" data-target="#ajft"><b># AngularJS 过滤器</b></button>
+	<div id="ajft" class="collapse in">
 		> 过滤器可以使用一个管道字符（|）添加到表达式和指令中。<br>
 		> AngularJS 过滤器可用于转换数据<br><br>
 
-	<table border="solid" width="auto" align="center">
-		<tr>
-			<td>Filter</td>
-			<td>Description</td>
-		</tr>
+		<table border="solid" width="auto" align="center">
+			<tr>
+				<td>Filter</td>
+				<td>Description</td>
+			</tr>
 
-		<tr>
-			<td>currency</td>
-			<td>格式化数字为货币格式。</td>
-		</tr>
+			<tr>
+				<td>currency</td>
+				<td>格式化数字为货币格式。</td>
+			</tr>
 
-		<tr>
-			<td>filter</td>
-			<td>从数组项中选择一个子集。</td>
-		</tr>
+			<tr>
+				<td>filter</td>
+				<td>从数组项中选择一个子集。</td>
+			</tr>
 
-		<tr>
-			<td>lowercase</td>
-			<td>格式化字符串为小写。</td>
-		</tr>
+			<tr>
+				<td>lowercase</td>
+				<td>格式化字符串为小写。</td>
+			</tr>
 
-		<tr>
-			<td>orderBy</td>
-			<td>根据某个表达式排列数组。</td>
-		</tr>
+			<tr>
+				<td>orderBy</td>
+				<td>根据某个表达式排列数组。</td>
+			</tr>
 
-		<tr>
-			<td>uppercase</td>
-			<td>格式化字符串为大写。</td>
-		</tr>
-	</table>
+			<tr>
+				<td>uppercase</td>
+				<td>格式化字符串为大写。</td>
+			</tr>
+		</table>
+	</div>
+	<br>
 
-	<!-- Example -->
-	<div id="appFId" ng-app="appF">
+	<!-- Example 5-->
+	<button class="btn btn-outline-danger" data-toggle="collapse" data-target="#appFId">> Example 5</button>
+	<div id="appFId" ng-app="appF" class="collapse in">
 		<p>{{ 11.121213 | number:2 }}</p>
 		<p>
 			{{
@@ -152,65 +179,184 @@
 			] | orderBy:'id' }}
 		</p>
 	</div>
+	<br><br>
+
+	<button class="btn btn-primary" data-target="#idAS" data-toggle="collapse"><b># AngularJS 服务(Service)</b></button>
+	<div id="idAS" class="collapse">
+		服务是一个函数或对象，可在 AngularJS 应用中使用<br>
+
+		$location 服务<br>
+		> 可以返回当前页面的 URL 地址<br><br>
+
+		$http 服务<br>
+		> 服务向服务器发送请求，应用响应服务器传送过来的数据。<br><br>
+
+		$timeout 服务<br>
+		> 对应了 JS window.setTimeout 函数<br><br>
+
+		$interval 服务<br>
+		> 对应了 JS window.setInterval 函数<br>
+	</div>
 	<br>
 
-	<h3 align="center"># AngularJS 服务(Service)</h3>
+	<!-- Example 6 app3 -->
+	<button class="btn btn-outline-primary" data-toggle="collapse" data-target="#idEx6">> Example 6</button>
+	<div id="idEx6" class="collapse in">
+		<div ng-app="app3" id="appId3" ng-controller="controllerApp3">
+			<p>URL: {{ myUrl }}</p>
+			<p>Time: {{ myTime }}</p>
+			<p>255 的16进制是: {{hex}}</p>
+		</div>
 
-	服务是一个函数或对象，可在 AngularJS 应用中使用<br>
-
-	$location 服务<br>
-	> 可以返回当前页面的 URL 地址<br><br>
-
-	$http 服务<br>
-	> 服务向服务器发送请求，应用响应服务器传送过来的数据。<br><br>
-
-	$timeout 服务<br>
-	> 对应了 JS window.setTimeout 函数<br><br>
-
-	$interval 服务<br>
-	> 对应了 JS window.setInterval 函数<br><br>
-
-	<!-- Example app3 -->
-	<div ng-app="app3" id="appId3" ng-controller="controllerApp3">
-		<p>URL: {{ myUrl }}</p>
-		<p>Time: {{ myTime }}</p>
-		<p>255 的16进制是: {{hex}}</p>
+		<div ng-app="app4" id="app4Id">
+			<p>
+				在过滤器中使用服务:
+				&nbsp;
+				&nbsp;
+				{{ 255 | myFormat}}
+			</p>
+		</div>
 	</div>
+	<br><br>
 
-	<div ng-app="app4" id="app4Id">
-		<p>
-			在过滤器中使用服务:
-			&nbsp;
-			&nbsp;
-			{{ 255 | myFormat}}
-		</p>
-	</div>
-
-	<div ng-app="app5" id="app5id" ng-controller= "controllerApp5">
+	<!-- <div ng-app="app5" id="app5id" ng-controller= "controllerApp5" ng-hide="true">
 		<ul>
 			<li ng-repeat="app5x in app5Names">
 				{{ x.Name + ', ' + x.Country }}
 			</li>
 		</ul>
+	</div> -->
 
+	<button class="btn btn-success"
+			data-toggle= "collapse"
+			data-target="#idASle">
+			<b># AngularJS Select(选择框) & 事件</b>
+	</button>
+	<div id="idASle" class="collapse in">
+		ng-options 与 ng-repeat 指令来创建下拉列表<br>
+		> ng-repeat 指令是通过数组来循环 HTML 代码来创建下拉列表<br>
+		> ng-options 指令更适合创建下拉列表<br><br>
+		> 使用 ng-options 的选项的一个对象， ng-repeat 是一个字符串<br><br>
+
+
+		$odd 奇数<br>
+		$even 偶数<br>
+		$dirty<br>
+		$invalid<br>
+		$error<br><br>
+
+		HTML 表单属性 novalidate 用于禁用浏览器默认的验证<br><br>
+
+		<form novalidate></form>
+		<table border="solid" width="auto" align="center">
+			<thead>
+				<tr>
+					<td>属性</td>
+					<td>描述</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>$dirty</td>
+					<td>表单有填写记录</td>
+				</tr>
+				<tr>
+					<td>$valid</td>
+					<td>字段内容合法的</td>
+				</tr>
+				<tr>
+					<td>$invalid</td>
+					<td>字段内容是非法的</td>
+				</tr>
+				<tr>
+					<td>$pristine</td>
+					<td>表单没有填写记录</td>
+				</tr>
+			</tbody>
+		</table><br>
 	</div>
+	<br>
 
-
-
-	<h3 align="center"># AngularJS Select(选择框)</h3>
-	ng-options 与 ng-repeat 指令来创建下拉列表<br>
-	> ng-repeat 指令是通过数组来循环 HTML 代码来创建下拉列表<br>
-	> ng-options 指令更适合创建下拉列表<br><br>
-	> 使用 ng-options 的选项的一个对象， ng-repeat 是一个字符串<br><br>
-
-
-	$odd 奇数<br>
-	$even 偶数<br>
-
-
-	<div ng-app="app6" ng-controller="controllerApp6" id="idApp6">
+	<!-- Example 7 -->
+	<button class="btn btn-outline-success" data-target="#idApp6" data-toggle="collapse">> Example 7</button>
+	<div ng-app="app6" class="collapse in" ng-controller="controllerApp6" id="idApp6" ng-init='count = 0'>
 		<select ng-init="selectedName = app6Names[0]" ng-model="selectedName" ng-options="app6x for app6x in app6Names">
 		</select>
+
+		<button ng-disabled='btnStatus' ng-click='count = count + 1' class="btn btn-success">Click</button>
+		<input type="checkbox" name="checkbox" ng-model="btnStatus">
+		<span ng-show='btnStatus'>What???</span>
+		{{ count }}
+		<button ng-click='btnReset()' ng-disabled='count <= 0' class="btn btn-success">Reset</button>
+	</div>
+
+	<div ng-app="myApp" ng-controller="userCtrl" id="idApp7">
+		<button class="btn btn-outline-success" ng-click="showMyApp = !showMyApp">> Example 8 myApp</button>
+		<div ng-show="showMyApp">
+			<h3>Users</h3>
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th>编辑</th>
+			      <th>名</th>
+			      <th>姓</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr ng-repeat="user in users">
+			      <td>
+			        <button class="btn" ng-click="editUser(user.id)">
+			          <span class="glyphicon glyphicon-pencil"></span>编辑
+			        </button>
+			      </td>
+			      <td>{{ user.fName }}</td>
+			      <td>{{ user.lName }}</td>
+			    </tr>
+			  </tbody>
+			</table>
+
+			<hr>
+			<button class="btn btn-success" ng-click="editUser('new')">
+			<span class="glyphicon glyphicon-user"></span>创建新用户
+			</button>
+			<hr>
+
+			<h3 ng-show="edit">创建新用户:</h3>
+			<h3 ng-hide="edit">编辑用户:</h3>
+
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">名:</label>
+			    <div class="col-sm-10">
+			    <input type="text" ng-model="fName" ng-disabled="!edit" placeholder="名">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">姓:</label>
+			    <div class="col-sm-10">
+			    <input type="text" ng-model="lName" ng-disabled="!edit" placeholder="姓">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">密码:</label>
+			    <div class="col-sm-10">
+			    <input type="password" ng-model="passw1" placeholder="密码">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">重复密码:</label>
+			    <div class="col-sm-10">
+			    <input type="password" ng-model="passw2" placeholder="重复密码">
+			    </div>
+			  </div>
+			</form>
+
+			<hr>
+			<button class="btn btn-success" ng-disabled="error || incomplete">
+			<span class="glyphicon glyphicon-save"></span>修改
+			</button>
+		</div>
 	</div>
 
 	<!-- ////////////////////////////////////////////////////////////////// -->

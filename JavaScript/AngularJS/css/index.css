@@ -7,9 +7,9 @@
 }
 
 .appBody {
-	margin-left: 222px;
+	margin-left: 152px;
 	margin-top: 20px;
-	margin-right: 222px;
+	margin-right: 152px;
 	margin-bottom: 20px;
 }
 
@@ -24,7 +24,7 @@
 	padding-bottom: 10px;
 }
 
-table, th , td  {
+/*table, th , td  {
   border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
@@ -34,4 +34,13 @@ table tr:nth-child(odd)	{
 }
 table tr:nth-child(even) {
   background-color: #ffffff;
+}*/
+
+
+/*控制菜单箭头*/
+.nav-header.collapsed > span.glyphicon-chevron-toggle:before {
+content: "\e114";
+}
+.nav-header > span.glyphicon-chevron-toggle:before {
+content: "\e113";
 }
