@@ -9,167 +9,230 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<style>
 		input.ng-invalid {
-		    background-color: #FF5B5B;
+		    background-color: #86D5F6;
 		}
 	</style>
 </head>
 
-<body class="appBody">
+<body>
 
 <h1 align="center">AngularJS</h1>
 
+<hr style="margin: 10px">
 
-<hr>
-# AngularJS 指令<br>
+<div class="appBody">
 
-	AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
+	<h3 align="center"># AngularJS 指令</h3>
 
-	1. ng-app 指令定义一个 AngularJS 应用程序。<br>
-	2. ng-init 初始化数据的方式(不是很常见)
-	3. ng-model 指令把元素值(比如输入域的值)绑定到应用程序。<br>
-		> ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)<br>
-	4. ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>
-	5. ng-controller 定义了控制器. <br>
-	6. ng-repeat 指令会重复一个 HTML 元素<br><br>
+		AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
 
-	调用指令<br>
-	(1) 元素名<br>
-	(2) 属性<br>
-	(3) 类名<br>
-	(4) 注释<br><br>
+		1. ng-app 指令定义一个 AngularJS 应用程序。<br>
+		2. ng-init 初始化数据的方式(不是很常见)
+		3. ng-model 指令把元素值(比如输入域的值)绑定到应用程序。<br>
+			> ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)<br>
+		4. ng-bind 指令把应用程序数据绑定到 HTML 视图。<br>
+		5. ng-controller 定义了控制器. <br>
+		6. ng-repeat 指令会重复一个 HTML 元素<br>
+		7. ng-option 指令来创建一个下拉列表<br><br>
 
-	自定义指令： .directive
+		调用指令<br>
+			(1) 元素名<br>
+			(2) 属性<br>
+			(3) 类名<br>
+			(4) 注释<br><br>
 
-<!-- Example 1 -->
-<div ng-app="" style="border: 1px solid #D1D0D0; padding-left: 20px; padding-right: 20px; width: 300px; margin: 0px">
-	<p>Username: <input type="text" name="username" ng-model="username" required=""></p>
-	<h4>Hello {{ username }}</h4>
-</div>
+		自定义指令： .directive
 
-<!-- Example 2 -->
-<div id="app1" ng-app="myApp1" ng-controller="myController1" class="appBox">
-	名: <input type="text" ng-model="firstName" required><br>
-	姓: <input type="text" ng-model="lastName"><br>
-	<br>
-	姓名: {{firstName + " " + lastName}}
-	<h4>Full name: {{ fullName() }}</h4>
-</div>
+	<!-- Example 1 -->
+	<div ng-app="" style="border: 1px solid #D1D0D0; padding-left: 20px; padding-right: 20px; width: auto; margin: 0px">
+		<p>Username: <input type="text" name="username" ng-model="username" required=""></p>
+		<p>Hello {{ username }}</p>
+	</div>
 
-<!-- Example 3 -->
-<form id="app2" ng-app="myApp2" name="myForm" class="appBox">
-    Email:
-    <input type="email" name="myAddress" ng-model="text"><br>
-    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
-    <!-- 提示信息会在 ng-show 属性返回 true 的情况下显示 -->
-</form>
+	<!-- Example 2 -->
+	<div id="app1" ng-app="myApp1" ng-controller="myController1" class="appBox">
+		名: <input type="text" ng-model="firstName" required><br>
+		姓: <input type="text" ng-model="lastName"><br>
+		<br>
+		姓名: {{firstName + " " + lastName}}
+		<p>Full name: {{ fullName() }}</p>
+	</div>
 
-<br><br>
-# AngularJS Scope(作用域)<br>
-	Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。<br>
-	Scope 是一个对象，有可用的方法和属性。<br>
-	Scope 可应用在视图和控制器上<br><br>
+	<!-- Example 3 -->
+	<form id="app2" ng-app="myApp2" name="myForm" class="appBox">
+	    Email:
+	    <input type="email" name="myAddress" ng-model="text"><br>
+	    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+	    <!-- 提示信息会在 ng-show 属性返回 true 的情况下显示 -->
+	</form>
 
-	* 根作用域
-		> 所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。
+	<br><br>
+	<h3 align="center"># AngularJS Scope(作用域)</h3>
+		Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。<br>
+		Scope 是一个对象，有可用的方法和属性。<br>
+		Scope 可应用在视图和控制器上<br><br>
 
-<!-- Example 4 ng-repeat -->
-<div ng-app="myAppLi" id="appLi" ng-controller="controllerLi">
-	<li ng-repeat="x in liNames">{{ x }}</li>
-</div>
+		* 根作用域
+			> 所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。
 
-
-
-# AngularJS 过滤器<br>
-	> 过滤器可以使用一个管道字符（|）添加到表达式和指令中。<br>
-	> AngularJS 过滤器可用于转换数据<br>
-
-<table border="solid">
-	<tr>
-		<td>Filter</td>
-		<td>Description</td>
-	</tr>
-
-	<tr>
-		<td>currency</td>
-		<td>格式化数字为货币格式。</td>
-	</tr>
-
-	<tr>
-		<td>filter</td>
-		<td>从数组项中选择一个子集。</td>
-	</tr>
-
-	<tr>
-		<td>lowercase</td>
-		<td>格式化字符串为小写。</td>
-	</tr>
-
-	<tr>
-		<td>orderBy</td>
-		<td>根据某个表达式排列数组。</td>
-	</tr>
-
-	<tr>
-		<td>uppercase</td>
-		<td>格式化字符串为大写。</td>
-	</tr>
-</table>
+	<!-- Example 4 ng-repeat -->
+	<div ng-app="myAppLi" id="appLi" ng-controller="controllerLi">
+		<li ng-repeat="x in liNames">{{ x }}</li>
+	</div>
 
 
-<div id="appFId" ng-app="appF">
-	<h4>{{ 11.121213 | number:2 }}</h4>
-	<h4>
-		{{
-			[{"age": 20,"id": 10,"name": "iphone"},
+
+	<h3 align="center"># AngularJS 过滤器</h3>
+		> 过滤器可以使用一个管道字符（|）添加到表达式和指令中。<br>
+		> AngularJS 过滤器可用于转换数据<br><br>
+
+	<table border="solid" width="auto" align="center">
+		<tr>
+			<td>Filter</td>
+			<td>Description</td>
+		</tr>
+
+		<tr>
+			<td>currency</td>
+			<td>格式化数字为货币格式。</td>
+		</tr>
+
+		<tr>
+			<td>filter</td>
+			<td>从数组项中选择一个子集。</td>
+		</tr>
+
+		<tr>
+			<td>lowercase</td>
+			<td>格式化字符串为小写。</td>
+		</tr>
+
+		<tr>
+			<td>orderBy</td>
+			<td>根据某个表达式排列数组。</td>
+		</tr>
+
+		<tr>
+			<td>uppercase</td>
+			<td>格式化字符串为大写。</td>
+		</tr>
+	</table>
+
+	<!-- Example -->
+	<div id="appFId" ng-app="appF">
+		<p>{{ 11.121213 | number:2 }}</p>
+		<p>
+			{{
+				[{"age": 20,"id": 10,"name": "iphone"},
+				{"age": 12,"id": 11,"name": "sunm xing"},
+				{"age": 44,"id": 12,"name": "test abc"}
+				] | filter:{'name':'iphone'}
+			}}
+		</p>
+
+	    <!-- 从前面开始截取6位 -->
+		<p>{{"1234567890" | limitTo :6}}</p>
+
+		<!-- 从后面开始截取4位 -->
+		<p>{{"1234567890" | limitTo:-4}}</p>
+
+		<!-- 根id降序排 -->
+		<p>
+			{{ [{"age": 20,"id": 10,"name": "iphone"},
 			{"age": 12,"id": 11,"name": "sunm xing"},
 			{"age": 44,"id": 12,"name": "test abc"}
-			] | filter:{'name':'iphone'}
-		}}
-	</h4>
+			] | orderBy:'id':true }}
+		</p>
 
-    <!-- 从前面开始截取6位 -->
-	<h4>{{"1234567890" | limitTo :6}}</h4>
+		<!-- 根据id升序排 -->
+		<p>
+			{{ [{"age": 20,"id": 10,"name": "iphone"},
+			{"age": 12,"id": 11,"name": "sunm xing"},
+			{"age": 44,"id": 12,"name": "test abc"}
+			] | orderBy:'id' }}
+		</p>
+	</div>
+	<br>
 
-	<!-- 从后面开始截取4位 -->
-	<h4>{{"1234567890" | limitTo:-4}}</h4>
+	<h3 align="center"># AngularJS 服务(Service)</h3>
 
-	<!-- 根id降序排 -->
-	<h4>
-		{{ [{"age": 20,"id": 10,"name": "iphone"},
-		{"age": 12,"id": 11,"name": "sunm xing"},
-		{"age": 44,"id": 12,"name": "test abc"}
-		] | orderBy:'id':true }}
-	</h4>
+	服务是一个函数或对象，可在 AngularJS 应用中使用<br>
 
-	<!-- 根据id升序排 -->
-	<h4>
-		{{ [{"age": 20,"id": 10,"name": "iphone"},
-		{"age": 12,"id": 11,"name": "sunm xing"},
-		{"age": 44,"id": 12,"name": "test abc"}
-		] | orderBy:'id' }}
-	</h4>
+	$location 服务<br>
+	> 可以返回当前页面的 URL 地址<br><br>
+
+	$http 服务<br>
+	> 服务向服务器发送请求，应用响应服务器传送过来的数据。<br><br>
+
+	$timeout 服务<br>
+	> 对应了 JS window.setTimeout 函数<br><br>
+
+	$interval 服务<br>
+	> 对应了 JS window.setInterval 函数<br><br>
+
+	<!-- Example app3 -->
+	<div ng-app="app3" id="appId3" ng-controller="controllerApp3">
+		<p>URL: {{ myUrl }}</p>
+		<p>Time: {{ myTime }}</p>
+		<p>255 的16进制是: {{hex}}</p>
+	</div>
+
+	<div ng-app="app4" id="app4Id">
+		<p>
+			在过滤器中使用服务:
+			&nbsp;
+			&nbsp;
+			{{ 255 | myFormat}}
+		</p>
+	</div>
+
+	<div ng-app="app5" id="app5id" ng-controller= "controllerApp5">
+		<ul>
+			<li ng-repeat="app5x in app5Names">
+				{{ x.Name + ', ' + x.Country }}
+			</li>
+		</ul>
+
+	</div>
+
+
+
+	<h3 align="center"># AngularJS Select(选择框)</h3>
+	ng-options 与 ng-repeat 指令来创建下拉列表<br>
+	> ng-repeat 指令是通过数组来循环 HTML 代码来创建下拉列表<br>
+	> ng-options 指令更适合创建下拉列表<br><br>
+	> 使用 ng-options 的选项的一个对象， ng-repeat 是一个字符串<br><br>
+
+
+	$odd 奇数<br>
+	$even 偶数<br>
+
+
+	<div ng-app="app6" ng-controller="controllerApp6" id="idApp6">
+		<select ng-init="selectedName = app6Names[0]" ng-model="selectedName" ng-options="app6x for app6x in app6Names">
+		</select>
+	</div>
+
+	<!-- ////////////////////////////////////////////////////////////////// -->
+
+	<script src="js/index.js"></script>
+
+	<!-- <script type="text/javascript">
+		var app = angular.module('myApp1', []);
+		app.controller('myController1', function($scope) {
+			$scope.firstName = "Egeye";
+			$scope.lastName = "Ignativ";
+			$scope.fullName = () => { return $scope.firstName + ' ' + $scope.lastName };
+		});
+
+		angular.module('myAppLi', []).controller('controllerLi', ($scope) => { $scope.liNames = ['Egeye', 'Octavio', 'Will'] } );
+
+		angular.bootstrap(document.getElementById("app1"), ['myApp1']);
+		angular.bootstrap(document.getElementById("app2", ['myApp2']));
+		angular.bootstrap(document.getElementById("appLi"), ['myAppLi']);
+
+	</script> -->
 </div>
-
-<!-- ------------------------------------------------------------------------------------ -->
-
-<script src="js/index.js"></script>
-
-<!-- <script type="text/javascript">
-	var app = angular.module('myApp1', []);
-	app.controller('myController1', function($scope) {
-		$scope.firstName = "Egeye";
-		$scope.lastName = "Ignativ";
-		$scope.fullName = () => { return $scope.firstName + ' ' + $scope.lastName };
-	});
-
-	angular.module('myAppLi', []).controller('controllerLi', ($scope) => { $scope.liNames = ['Egeye', 'Octavio', 'Will'] } );
-
-	angular.bootstrap(document.getElementById("app1"), ['myApp1']);
-	angular.bootstrap(document.getElementById("app2", ['myApp2']));
-	angular.bootstrap(document.getElementById("appLi"), ['myAppLi']);
-
-</script> -->
-
 
 </body>
 </html>

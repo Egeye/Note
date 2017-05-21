@@ -7,11 +7,14 @@
 }
 
 .appBody {
-	margin: 25px;
+	margin-left: 222px;
+	margin-top: 20px;
+	margin-right: 222px;
+	margin-bottom: 20px;
 }
 
 .appBox {
-	width: 300px;
+	width: auto;
 	height: auto;
 	min-width: 300px;
 	border: 1px solid #D1D0D0;
@@ -19,4 +22,16 @@
 	padding-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
 }
