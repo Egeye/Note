@@ -125,6 +125,18 @@ angular.module('myApp', []).controller('userCtrl', function($scope) {
 });
 // ----------------------End------------------------------------
 
+var app8 = angular.module('app8', []);
+app8.controller('controller8', ($scope, $timeout) => {
+	var updateClock = function() {
+		$scope.clock = new Date();
+		$timeout(function() {
+			updateClock();
+		}, 1000);
+	};
+	updateClock();
+});
+
+
 angular.bootstrap(document.getElementById("app1"), ['myApp1']);
 angular.bootstrap(document.getElementById("app2", ['myApp2']));
 angular.bootstrap(document.getElementById("appFId", ['appF']));
@@ -134,3 +146,4 @@ angular.bootstrap(document.getElementById("app4Id"), ['app4']);
 // angular.bootstrap(document.getElementById('app5id'), ['app5']);
 angular.bootstrap(document.getElementById('idApp6'), ['app6']);
 angular.bootstrap(document.getElementById('idApp7'), ['myApp']);
+angular.bootstrap(document.getElementById('id8'), ['app8']);

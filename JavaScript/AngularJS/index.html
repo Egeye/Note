@@ -359,6 +359,78 @@
 		</div>
 	</div>
 
+	<div>
+		1. 完全使用JavaScript编写的客户端技术,一种构建动态Web应用的结构化框架<br>
+		2. 数据绑定<br>
+			只要遇到$符号，你都可以只把它看作一个Angular对象<br>
+			在视图中通过对象的属性而非对象本身来进行引用绑定，是Angular中的最佳实践。<br>
+		3. 模块
+			angular.module('myApp', []);
+				声明模块
+				两个参数，第一个是模块的名称，第二个是依赖列表，也就是可以被注入到模块中的对象列表
+			angular.module('myApp')
+				获取应用
+		4. 作用域
+			$scope 的生命周期：创建、链接、更新、销毁
+		5. 控制器 ng-controller
+		6. 表达式 {{}}
+		7. 过滤器
+	</div>
+
+	<div id="id8" ng-app="app8" ng-controller='controller8'>
+		<p>{{ clock }}</p>
+		<p>{{ today }}</p>
+		<p>{{ today | date:'medium' }} <!-- Aug 09, 2013 12:09:02 PM --></p>
+		<p>{{ today | date:'short' }} <!-- 8/9/1312:09PM --></p>
+		<p>{{ today | date:'fullDate' }} <!-- Thursday, August 09, 2013 --></p>
+		<p>{{ today | date:'longDate' }} <!-- August 09, 2013 --></p>
+		<p>{{ today | date:'mediumDate' }}<!-- Aug 09, 2013 --></p>
+		<p>{{ today | date:'shortDate' }} <!-- 8/9/13 --></p>
+		<p>{{ today | date:'mediumTime' }}<!-- 12:09:02 PM --></p>
+		<p>{{ today | date:'shortTime' }} <!-- 12:09 PM --></p>
+		
+		<p>年份格式化</p>
+		<p>四位年份： {{ today | date:'yyyy' }} <!-- 2013 --></p>
+		<p>两位年份： {{ today | date:'yy' }} <!-- 13 --></p>
+		<p>一位年份： {{ today | date:'y' }} <!-- 2013 --></p>
+		
+		<p>月份格式化</p>
+		<p>英文月份： {{ today | date:'MMMM' }} <!-- August --></p>
+		<p>英文月份简写： {{ today | date:'MMM' }} <!-- Aug --></p>
+		<p>数字月份： {{ today |date:'MM' }} <!-- 08 --></p>
+		<p>一年中的第几个月份： {{ today |date:'M' }} <!-- 8 --></p>
+		
+		<p>日期格式化</p>
+		<p>数字日期： {{ today|date:'dd' }} <!-- 09 --></p>
+		<p>一个月中的第几天： {{ today | date:'d' }} <!-- 9 --></p>
+		<p>英文星期： {{ today | date:'EEEE' }} <!-- Thursday --></p>
+		<p>英文星期简写： {{ today | date:'EEE' }} <!-- Thu --></p>
+		
+		<p>小时格式化</p>
+		<p>24小时制数字小时： {{today|date:'HH'}} <!--00--></p>
+		<p>一天中的第几个小时： {{today|date:'H'}} <!--0--></p>
+		<p>12小时制数字小时： {{today|date:'hh'}} <!--12--></p>
+		<p>上午或下午的第几个小时： {{today|date:'h'}} <!--12--></p>
+		
+		<p>分钟格式化</p>
+		<p>数字分钟数： {{ today | date:'mm' }} <!-- 09 --></p>
+		<p>一个小时中的第几分钟： {{ today | date:'m' }} <!-- 9 --></p>
+		
+		<p>秒数格式化</p>
+		<p>数字秒数： {{ today | date:'ss' }} <!-- 02 --></p>
+		<p>一分钟内的第几秒： {{ today | date:'s' }} <!-- 2 --></p>
+		<p>毫秒数： {{ today | date:'.sss' }} <!-- .995 --></p>
+		
+		<p>字符格式化</p>
+		<p>上下午标识： {{ today | date:'a' }} <!-- AM --></p>
+		<p>四位时区标识： {{ today | date:'Z' }} <!--- 0700 --></p>
+
+		<p>下面是一些自定义日期格式的示例：</p>
+		<p>{{ today | date:'MMMd, y' }} <!-- Aug9, 2013 --></p>
+		<p>{{ today | date:'EEEE, d, M' }} <!-- Thursday, 9, 8--></p>
+		<p>{{ today | date:'hh:mm:ss.sss' }} <!-- 12:09:02.995 --></p>
+	</div>
+
 	<!-- ////////////////////////////////////////////////////////////////// -->
 
 	<script src="js/index.js"></script>
