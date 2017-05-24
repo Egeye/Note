@@ -125,6 +125,14 @@ angular.module('myApp', []).controller('userCtrl', function($scope) {
 });
 // ----------------------End------------------------------------
 
+
+angular.module('appEx8',['ngRoute']).config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/',{template:'这是首页页面'})
+    			  .when('/computers',{template:'这是电脑分类页面'})
+    			  .when('/printers',{template:'这是打印机页面'})
+    			  .otherwise({redirectTo:'/'});
+}]);
+
 var app8 = angular.module('app8', []);
 app8.controller('controller8', ($scope, $timeout) => {
 	var updateClock = function() {
@@ -136,7 +144,6 @@ app8.controller('controller8', ($scope, $timeout) => {
 	updateClock();
 });
 
-
 angular.bootstrap(document.getElementById("app1"), ['myApp1']);
 angular.bootstrap(document.getElementById("app2", ['myApp2']));
 angular.bootstrap(document.getElementById("appFId", ['appF']));
@@ -146,4 +153,5 @@ angular.bootstrap(document.getElementById("app4Id"), ['app4']);
 // angular.bootstrap(document.getElementById('app5id'), ['app5']);
 angular.bootstrap(document.getElementById('idApp6'), ['app6']);
 angular.bootstrap(document.getElementById('idApp7'), ['myApp']);
+angular.bootstrap(document.getElementById('idEx8'), ['appEx8']);
 angular.bootstrap(document.getElementById('id8'), ['app8']);
