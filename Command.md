@@ -15,7 +15,7 @@
     > psql fmegdb
     
     > SELECT * from operation_logs
-  
+    
     > \g
     
 5. mkdir
