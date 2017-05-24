@@ -30,7 +30,7 @@
 <div class="appBody">
 
 	<div ng-app="">
-		<button align="right" class="btn btn-info" ng-click="appCommand = !appCommand"><b># AngularJS 指令</b></button></b>
+		<button align="right" class="btn btn-info" ng-click="appCommand = !appCommand"><b># AngularJS 指令</b></button>
 		<div ng-show="appCommand">
 			AngularJS 通过新的属性和表达式扩展了 HTML, 允许你自定义指令<br>
 
@@ -46,7 +46,8 @@
 			9. ng-show 指令隐藏或显示一个 HTML 元素<br>
 			10. ng-hide 指令用于隐藏或显示 HTML 元素<br>
 			11. ng-click 指令定义了 AngularJS 点击事件<br>
-			12. ng-include 指令来包含 HTML<br><br>
+			12. ng-include 指令来包含 HTML<br>
+			13. ng-view<br><br>
 
 			调用指令<br>
 				(1) 元素名<br>
@@ -357,6 +358,26 @@
 			<span class="glyphicon glyphicon-save"></span>修改
 			</button>
 		</div>
+	</div>
+	<br>
+
+	<button class="btn btn-info" data-target="#idAppRouter" data-toggle="collapse"><b># AngularJS 路由</b></button>
+	<div id="idAppRouter" class="collapse in">
+		通过不同的 URL 访问不同的内容。<br>
+		通过 AngularJS 可以实现多视图的单页Web应用（single page web application，SPA）<br>
+	</div>
+	<br>
+
+	<!-- Example 8 -->
+	<button class="btn btn-outline-info" data-target="#idEx8" data-toggle="collapse">> Example 8</button>
+	<div id="idEx8" class="collapse" ng-app="appEx8">
+		<ul class="list-group">
+            <li class="list-group-item"><a href="#/">首页</a></li>
+            <li class="list-group-item"><a href="#/computers">电脑</a></li>
+            <li class="list-group-item"><a href="#/printers">打印机</a></li>
+            <li class="list-group-item"><a href="#/blabla">其他</a></li>
+        </ul>
+		<div ng-view></div>
 	</div>
 
 	<div>
