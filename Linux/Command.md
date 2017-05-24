@@ -5,30 +5,23 @@
 2. down掉接口：
 
     > ifdown xxx
-    
+
     > ifup xxx
-    
+
 3. ip addr show
 
-4. PostgreSQL
 
-    > psql fmegdb
-    
-    > SELECT * from operation_logs
-    
-    > \g
-    
-5. mkdir
+4. mkdir
 
-6. 权限：chmod 777 restroeData.sh
+5. 权限：chmod 777 restroeData.sh
 
-7. 取消挂载：umount /mnt
+6. 取消挂载：umount /mnt
 
-8. 查找文件命令：find / -name *pg-log*
+7. 查找文件命令：find / -name *pg-log*
 
-9. 查看Apache进程命令：ps -ef | grep apache
+8. 查看Apache进程命令：ps -ef | grep apache
 
-10. ssh admcat3750@192.168.103.120
+9. ssh admcat3750@192.168.103.120
 
     > ssh user@192.168.100.85
 
@@ -39,22 +32,15 @@
     > ip address 192.168.111.222 255.0.0.0
 
     > show running-config （查看是否设置成功）
-    
-11. pwd
 
-12. 查找文件命令：find / -name *pg-log*
+10. pwd
 
-13. sftp 10.167.153.67
+11. 查找文件命令：find / -name *pg-log*
+
+12. sftp 10.167.153.67
 
     > sftp> get xxxx
 
-14. Oracle命令
-
-    > su - oracle
-
-    > $sqlplus
-
-    > desc table;
 
 ### Setting
 1. 配置隧道时侦听端口可能会被占用
