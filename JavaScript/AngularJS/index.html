@@ -451,7 +451,16 @@
 		<p>{{ today | date:'EEEE, d, M' }} <!-- Thursday, 9, 8--></p>
 		<p>{{ today | date:'hh:mm:ss.sss' }} <!-- 12:09:02.995 --></p>
 	</div>
-
+	
+	<!-- upload file -->
+	<!--<button class="btn-link" onclick="document.getElementById('upfile').click()">添加文件</button>-->
+	<input id="upfile"
+	       class="add-panel-search"
+	       name="upfile"
+	       type="file"
+	       ng-click="addLocalFile()"
+	       ng-hide="true">
+	
 	<!-- ////////////////////////////////////////////////////////////////// -->
 
 	<script src="js/index.js"></script>
