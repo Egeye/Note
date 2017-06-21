@@ -32,6 +32,8 @@
 
 16. Babel
 
+17. BufferScroll(*)
+
 ***
 
 #### 网站
@@ -43,3 +45,7 @@
 * Sublime Text 3 plugin sublimelinter
 
 > http://sublimelinter.readthedocs.io/en/latest/usage.html
+
+* 保留代码的折叠状态，解压后，保留文件夹名[BufferScroll]直接放到Packages目录下
+
+> https://github.com/titoBouzout/BufferScroll
