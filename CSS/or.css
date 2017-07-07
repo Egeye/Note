@@ -1,0 +1,68 @@
+.param-resource-list-scroll {
+	overflow-x: hidden;
+	height: 470px;
+	overflow-y: auto;
+	/* white-space: nowrap; */
+	width: 587px;
+	padding-right: 10px;
+}
+
+.param-p {
+	padding-top: 13px;
+	line-height: 4px;
+	display: inline-block; 
+}
+
+.resource-obj-content {
+	width:100%;
+	min-height:150px;
+	float: left;
+	border-radius: 4px;
+	background-color: #fff;
+	border:1px solid #E4E4E4;
+	margin-bottom: 10px;
+}
+
+.uname-fold-content {
+	background-color: #F0F9FF;
+	position: absolute;
+	left: 1284px;
+	transform: translateY(-50%);
+	height: 92px;
+	width: 41px;
+	top: 55%;
+	padding: 3px;
+}
+
+.arrow-change {
+	transform: rotate(270deg);
+}
+
+.uname-fold{
+	background-image: url('../images/u9433.png');
+	background-size: 18px 20px;
+}
+
+.param-resource-body {
+	height: 97%;
+	background-color: #F0F9FF;
+	float: right;
+	width: calc(100% - 19px)
+}
+
+.param-fold {
+	width: 19px;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position-y: 50%
+}
+
+.param-resource-list {
+	background-color: transparent;
+	width: 616px;
+	position: absolute;
+	left: 712px;
+	bottom: 23px;
+	height: 535px;
+	top: 109px
+}
