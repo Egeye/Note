@@ -132,13 +132,18 @@ Git：<https://git-scm.com/download/>
 	
 	> 权限问题
 	
-	>> cd ~/.ssh，如果提示：No such file or directory 说明是第一次使用git，如果真的进入了.ssh文件夹说明曾经用过git，但是里面的文件可能失效或者不存在了
+	>> cd ~/.ssh
+	>>> 如果提示：No such file or directory 说明是第一次使用git，如果真的进入了.ssh文件夹说明曾经用过git，但是里面的文件可能失效或者不存在了
 	
-	>> mkdir key_backup$ cp id_rsa* key_backup$ rm id_rsa*这个是用来清除你原来的ssh秘钥，如果没有的话会报错，把这个命令敲上去一次曾经的秘钥现在肯定不在了（试过，没成功……）
+	>> mkdir key_backup$ cp id_rsa* key_backup$ rm id_rsa*
+	>>> 这个是用来清除你原来的ssh秘钥，如果没有的话会报错，把这个命令敲上去一次曾经的秘钥现在肯定不在了（试过，没成功……）
 	
-	>> ssh-keygen -t rsa -C “您的邮箱地址”这个命令是用来生成新的ssh秘钥，在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。您可以在你本机系统盘下，您的用户文件夹里发现一个.ssh文件，其中的id_rsa.pub文件里储存的即为刚刚生成的ssh密钥
+	>> ssh-keygen -t rsa -C EMAIL
+	>>> 这个命令是用来生成新的ssh秘钥，在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。您可以在你本机系统盘下，您的用户文件夹里发现一个.ssh文件，其中的id_rsa.pub文件里储存的即为刚刚生成的ssh密钥
 	
 	>> 点击你的_github头像__选择__settings__，然后选择__SSH and GPG keys__,选择__new SSH key__,然后将刚才的 id_rsa.pub里面的内容扔到key标题下的框中，title随你任性，接着你就可以更任性的push、clone啥的都没问题了
+	
+	> http://blog.csdn.net/bat1992/article/details/54893290 相关配置
 	
 	 
 	``` git
