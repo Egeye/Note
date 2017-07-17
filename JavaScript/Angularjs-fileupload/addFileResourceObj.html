@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加源文件资源对象</title>
+</head>
+<body>
+<div class="panel panel-primary update-panel" ng-show-loading="{{isShowLoading}}">
+    <div class="panel-heading update-panel-head">
+        添加源文件资源对象
+        <div class="dialog-close-btn" style="margin:-6px" ng-click="closeThisDialog()"></div>
+    </div>
+    <!--添加资源begin-->
+    <div class="panel-body">
+        <uib-tabset>
+            <uib-tab id="serverUpload" heading="服务器上传" ng-click="tabServerUploadFlg()">
+                <div style="height:400px; margin-bottom: 20px">
+                    <input type="text" class="add-panel-search" placeholder="请输入IP、资源名称等进行搜索" ng-keyup="searchResource()" ng-model="solrSearch.searchTxt"/>
+                    <div class="add-table">
+                    <table class="table table-bordered">
+                        <tbody ng-cloak>
+                        <tr>
+                            <th style="width:180px;">资源名称</th>
+                            <th style="width:130px">IP</th>
+                            <th>用户名</th>
+                        </tr>
+                        <tr ng-repeat='rs in waitResourceList' ng-style="{background:($index%2==1)?'#F6F9FE':'#fff'}">
+                            <td>{{rs.resourceName}}</td>
+                            <td>
+                                <div class="ip-td">
+                                    <span ng-repeat="ipItem in rs.ips" >{{ipItem.ip}}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div ng-repeat='user in rs.user' class="add-uname">
+                                    <div class="uname-unchoose" ng-class = "{false:'uname-choose'}[!userSelectedMap[user.instanceId]]" ng-click="selectUser(user.instanceId)">{{user.userName}}</div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </uib-tab>
+
+            <uib-tab heading="本地上传" ng-click="tabLocalUploadFlg()">
+                <div style="height:400px; margin-bottom: 20px">
+                    <div style="height: 32px;width: 32px; float: left;margin-right: 7px" class="file-img"></div>
+                    <label class="btn-link" for="upfile" style="line-height: 32px">添加文件</label>
+                    <input id="upfile"
+                           class="add-panel-search"
+                           name="upfile"
+                           type="file"
+                           file-model="myFile"
+                           nv-file-select
+                           uploader="uploader"
+                           onchange="angular.element(this).scope().getFileSize(this)"
+                           ng-hide="true">
+                    <br>
+                    <!--<button class="btn-link" onclick="document.getElementById('upfile').click()">添加文件</button>-->
+                    <div style="height: 32px; margin-right: 7px; background-repeat:no-repeat; padding-left: 40px" class="file-img" ng-show="fileData.name">
+                        <span style="line-height: 32px">{{ fileData.name }}&nbsp;&nbsp;{{ fileData.size }}</span>
+                        <button class="btn-link" ng-click="btnDeleteFile()">删除</button>
+                        <label class="btn-link" for="upfile">更新</label>
+                    </div>
+
+
+                </div>
+            </uib-tab>
+        </uib-tabset>
+
+        <div class="form-group col-md-12" style="padding-top: 20px">
+            <div class="update-btn save-btn-bg" style="margin-left:430px" ng-click="fileResourceObjSave()">保存</div>
+            <div class="cancel-btn" style="margin-left:10px" ng-click="closeThisDialog()">取消</div>
+        </div>
+    </div>
+    <!--新增资源end-->
+</div>
+
+</body>
+</html>
