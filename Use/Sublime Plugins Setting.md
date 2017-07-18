@@ -20,7 +20,7 @@
 
 10. jquery
 
-11. IMESupport
+11. IMESupport 可以让输入法跟随光标
 
 12. GBK Support
 
@@ -33,6 +33,12 @@
 16. Babel
 
 17. BufferScroll(*)
+
+18. Anaconda 快捷键 ctrl+b就可以直接运行了
+
+19. AutoFileName 据说是字符串中自动补全路径名什么的
+
+20. SublimeREPL Python学习时安装
 
 ***
 
