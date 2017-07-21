@@ -1,0 +1,22 @@
+<uib-tab heading="本地上传" ng-click="tabLocalUploadFlg()">
+    <div style="height:400px; margin-bottom: 20px">
+        <div style="height: 32px;width: 32px; float: left;margin-right: 7px" class="file-img"></div>
+        <label class="btn-link" for="upfile" style="line-height: 32px">添加文件</label>
+        <input id="upfile"
+               class="add-panel-search"
+               name="upfile"
+               type="file"
+               file-model="myFile"
+               nv-file-select
+               uploader="uploader"
+               onchange="angular.element(this).scope().getFileSize(this)"
+               ng-hide="true">
+        <br>
+        <!--<button class="btn-link" onclick="document.getElementById('upfile').click()">添加文件</button>-->
+        <div style="height: 32px; margin-right: 7px; background-repeat:no-repeat; padding-left: 40px" class="file-img" ng-show="fileData.name">
+            <span style="line-height: 32px">{{ fileData.name }}&nbsp;&nbsp;{{ fileData.size }}</span>
+            <button class="btn-link" ng-click="btnDeleteFile()">删除</button>
+            <label class="btn-link" for="upfile">更新</label>
+        </div>
+    </div>
+</uib-tab>
