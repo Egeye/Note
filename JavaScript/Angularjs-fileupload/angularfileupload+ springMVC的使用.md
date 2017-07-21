@@ -92,7 +92,7 @@ var myapp = angular.module('add',['angularFileUpload'])
 </div>
 ```
 
->> 这个是最简单的使用主要是uploader这个属性，其他的accept、ngf-max-size、ngf-model-invalid都是一些限制图片的属性
+> 这个是最简单的使用主要是uploader这个属性，其他的accept、ngf-max-size、ngf-model-invalid都是一些限制图片的属性
 
 ```JavaScript
 myapp.controller('addProduct', ['$scope', '$http', 'FileUploader', function($scope, $http, FileUploader) {
