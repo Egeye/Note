@@ -1,3 +1,4 @@
+http://www.cnblogs.com/wangzun/p/6099884.html
 最近项目中需要用到文件上传，使用了angular-file-upload插件完成
 
 首先来介绍下这个插件的一些属性（参考官方文档）
@@ -22,19 +23,20 @@ withCredentials {Boolean} : 使用CORS，默认是false， 浏览器需支持HTM
 
 #### 方法
 
-addToQueue function(files[, options[, filters]]) {: Add items to the queue, where files is a {FileList|File|HTMLInputElement}, options is an {Object} andfilters is a {String}.  添加项到上传队列中，files 是 {FileList|File|HTMLInputElement}， options 是 {Object} 以及 filters 是 {String}
-removeFromQueue function(value) {: Remove an item from the queue, wherevalue is {FileItem} or index of item.  从上传队列移除项，value 可以是 {FileItem} 或者项的序号
-clearQueue function() {: Removes all elements from the queue.  移除上传队列所有的元素
-uploadItem function(value) {: Uploads an item, where value is {FileItem} or index of item.  上传项， value 可以是 {FileItem} 或者项的序号
-cancelItem function(value) {: Cancels uploading of item, where value is{FileItem} or index of item.  取消上传的项
-uploadAll function() {: Upload all pending items on the queue.  将上传队列中所有的项进行上传
-cancelAll function() {: Cancels all current uploads.  取消所有当前上传
-destroy function() {: Destroys a uploader. 
-isFile function(value) {return {Boolean};}: Returns true if value is {File}. 
-isFileLikeObject function(value) {return {Boolean};}: Returns true if value is{FileLikeObject}.
-getIndexOfItem function({FileItem}) {return {Number};}: Returns the index of the{FileItem} queue element.  返回项在上传队列中的序号
-getReadyItems function() {return {Array.<FileItems>};}: Return items are ready to upload.  返回准备上传的项
-getNotUploadedItems function() {return {Array.<FileItems>};}: Return an array of all pending items on the queue  返回上传队列中未上传的项
+* addToQueue function(files[, options[, filters]]) {: Add items to the queue, where files is a {FileList|File|HTMLInputElement}, options is an {Object} andfilters is a {String}.  添加项到上传队列中，files 是 {FileList|File|HTMLInputElement}， options 是 {Object} 以及 filters 是 {String}
+* removeFromQueue function(value) {: Remove an item from the queue, wherevalue is {FileItem} or index of item.  从上传队列移除项，value 可以是 {FileItem} 或者项的序号
+* clearQueue function() {: Removes all elements from the queue.  移除上传队列所有的元素
+* uploadItem function(value) {: Uploads an item, where value is {FileItem} or index of item.  上传项， value 可以是 {FileItem} 或者项的序号
+* cancelItem function(value) {: Cancels uploading of item, where value is{FileItem} or index of item.  取消上传的项
+* uploadAll function() {: Upload all pending items on the queue.  将上传队列中所有的项进行上传
+* cancelAll function() {: Cancels all current uploads.  取消所有当前上传
+* destroy function() {: Destroys a uploader. 
+* isFile function(value) {return {Boolean};}: Returns true if value is {File}. 
+* isFileLikeObject function(value) {return {Boolean};}: Returns true if value is{FileLikeObject}.
+* getIndexOfItem function({FileItem}) {return {Number};}: Returns the index of the{FileItem} queue element.  返回项在上传队列中的序号
+* getReadyItems function() {return {Array.<FileItems>};}: Return items are ready to upload.  返回准备上传的项
+* getNotUploadedItems function() {return {Array.<FileItems>};}: Return an array of all pending items on the queue  返回上传队列中未上传的项
+
 #### 回调函数
 
 onAfterAddingFile function(item) {: 添加文件到上传队列后
@@ -49,12 +51,12 @@ onCompleteItem function(item, response, status, headers) {: 文件上传完成�
 onProgressAll function(progress) {: 上传队列的所有文件上传中
 onCompleteAll function() {: 上传队列的所有文件上传完成后
 
---
+***
 使用
 当然首先需要加入插件的js
 
 1. bower
->> bower install angular-file-upload
+> bower install angular-file-upload
 
 2. 在页面导入js
 <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
