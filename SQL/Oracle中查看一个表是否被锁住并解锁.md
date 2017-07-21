@@ -16,7 +16,7 @@
 
 
 
-select object_id from user_objects where object_name=upper('表名');
-select sid from v$lock where id1=&object_id;
-select SID,SERIAL# from v$session where sid=181;
-alter system kill session 'SID,SERIAL#';
+* select object_id from user_objects where object_name=upper('表名');
+* select sid from v$lock where id1=&object_id;
+* select SID,SERIAL# from v$session where sid=181;
+* alter system kill session 'SID,SERIAL#';
