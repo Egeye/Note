@@ -26,3 +26,6 @@
 
 4. [译]ECMAScript 6: 使用 Object.assign() 合并对象
 > http://www.tuicool.com/articles/VF3Uf2E 
+
+5. Javascript异步编程的4种方法
+> http://www.cnblogs.com/fliu/articles/5246113.html
