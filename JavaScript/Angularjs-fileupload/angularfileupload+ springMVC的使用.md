@@ -1,4 +1,5 @@
 http://www.cnblogs.com/wangzun/p/6099884.html
+
 最近项目中需要用到文件上传，使用了angular-file-upload插件完成
 
 首先来介绍下这个插件的一些属性（参考官方文档）
@@ -67,18 +68,27 @@ var myapp = angular.module('add',['angularFileUpload'])
 我这里是上传的图片所以代码如下：
 ```HTML
 <div ng-controller="addProduct">
-<div>
-   <lable>产品名称</lable>
-   <input type="text" ng-model="productInfo.name">
-</div>
-<div>
-<lable>产品型号</lable>
- <input type="text" ng-model="productInfo.type">
-</div>
-<div>
-<lable>产品图片</lable>
-<input type="file" name="photo" nv-file-select=""  uploader="uploader" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile" /></div>
-<div><button class="btn btn-info" ng-click="addProduct()"></div>
+	<div>
+		<lable>产品名称</lable>
+		<input type="text" ng-model="productInfo.name">
+	</div>
+	<div>
+		<lable>产品型号</lable>
+		<input type="text" ng-model="productInfo.type">
+	</div>
+	<div>
+		<lable>产品图片</lable>
+		<input type="file" 
+			   name="photo" 
+			   nv-file-select=""  
+			   uploader="uploader" 
+			   accept="image/*" 
+			   ngf-max-size="2MB" 
+			   ngf-model-invalid="errorFile" />
+	</div>
+	<div>
+		<button class="btn btn-info" ng-click="addProduct()">
+	</div>
 </div>
 ```
 
