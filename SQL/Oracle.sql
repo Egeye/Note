@@ -107,7 +107,7 @@ alter table test1
 modify (name varchar2(16) default ‘unknown’);
 
 
-另：比较正规的写法是：
+-- 另：比较正规的写法是：
 -- Add/modify columns
 alter table TABLE_NAME rename column FIELD_NAME to NEW_FIELD_NAME;
 
@@ -163,8 +163,9 @@ constraint yy primary key(studentid));
 
 -- 2、删除表中已有的主键约束
 -- （1）无命名
-可用 SELECT * from user_cons_columns;
-查找表中主键名称得student表中的主键名为SYS_C002715
+-- 可用
+SELECT * from user_cons_columns;
+-- 查找表中主键名称得student表中的主键名为SYS_C002715
 alter table student drop constraint SYS_C002715;
 -- （2）有命名
 alter table students drop constraint yy;
