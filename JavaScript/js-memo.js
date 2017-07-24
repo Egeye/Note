@@ -1,7 +1,12 @@
 1. 深拷贝
     angular.copy();
 
-2. 
+2. 跨页面取数据
+    window.opener.jQuery('[ng-controller="xxController"]').scope().bindData(JSON.stringify(data));
+
+    $scope.bindData = function(list){
+        $scope.hasExcuManualInstId = JSON.parse(list);
+    };
 
 3. 保留两位小数
     size.toFixed(2);
