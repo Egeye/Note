@@ -1,20 +1,22 @@
 ### Git 使用
 
 Github：Egeye8t
-Git：<https://git-scm.com/download/> 
+Git：<https://git-scm.com/download/>
 
-1. 配置
+1. 配置 & 设置代理
 	``` git
 	git config --global user.name "Egeye"
 	git config --global user.email "egeye4y@gmail.com"
+	git config --global http.proxy 192.168.1.1:2234
+	git config --global https.proxy 192.168.1.1:2234
 	```
 	> 查看配置
 	``` git
 	git config user.name
 	git config user.email
 	```
-	
-2. 创建代码仓库 
+
+2. 创建代码仓库
 	``` git
 	git init
 	```
@@ -22,12 +24,12 @@ Git：<https://git-scm.com/download/>
 
 3. 设置换行命令
 	``` git
-	git config --global core.autocrlf false 
+	git config --global core.autocrlf false
 	```
 	> 如果有出警告
 	>> warning: LF will be replaced by CRLF in readme.txt.The file will have its original line endings in your working directory.
 
-	
+
 4. 添加
 	``` git
 	git add <filename/directory>
@@ -41,9 +43,9 @@ Git：<https://git-scm.com/download/>
 	git commit -m "Describe message."
 	```
 	> -m参数来加上提交的描述信息，没有描述信息的提交被认为是不合法的
-	
+
 	>> add 命令是把想要提交的代码先添加进来
-	
+
 	>> commit 命令则是真正地去执行提交操作
 
 
@@ -85,7 +87,7 @@ Git：<https://git-scm.com/download/>
 	``` git
 	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
 	```
-	
+
 	``` git
 	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
 	```
@@ -96,26 +98,26 @@ Git：<https://git-scm.com/download/>
 	git branch –a
 	```
 	> 查看分支
-	
+
 	``` git
 	git branch version1.0
 	```
 	> 创建分支
 
-	
+
 	``` git
 	git checkout version1.0
 	```
 	> 切换分支
 
-	
+
 	``` git
 	git branch -D version1.0
 	```
 	> 删除分支
 
 	>> 主线为 master分支
-	
+
 	>> 分支前面*号代表当前所处的分支
 
 12. 合并
@@ -129,23 +131,23 @@ Git：<https://git-scm.com/download/>
 	``` git
 	git clone https://github.com/exmaple/test.git
 	```
-	
+
 	> 权限问题
-	
+
 	>> cd ~/.ssh
 	>>> 如果提示：No such file or directory 说明是第一次使用git，如果真的进入了.ssh文件夹说明曾经用过git，但是里面的文件可能失效或者不存在了
-	
+
 	>> mkdir key_backup$ cp id_rsa* key_backup$ rm id_rsa*
 	>>> 这个是用来清除你原来的ssh秘钥，如果没有的话会报错，把这个命令敲上去一次曾经的秘钥现在肯定不在了（试过，没成功……）
-	
+
 	>> ssh-keygen -t rsa -C EMAIL
 	>>> 这个命令是用来生成新的ssh秘钥，在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。您可以在你本机系统盘下，您的用户文件夹里发现一个.ssh文件，其中的id_rsa.pub文件里储存的即为刚刚生成的ssh密钥
-	
+
 	>> 点击你的_github头像__选择__settings__，然后选择__SSH and GPG keys__,选择__new SSH key__,然后将刚才的 id_rsa.pub里面的内容扔到key标题下的框中，title随你任性，接着你就可以更任性的push、clone啥的都没问题了
-	
+
 	> http://blog.csdn.net/bat1992/article/details/54893290 相关配置
-	
-	 
+
+
 	``` git
 	git push origin master
 	```
@@ -157,9 +159,9 @@ Git：<https://git-scm.com/download/>
 	git merge origin/master
 	```
 	> 将远程版本库上的修改同步到本地
-	
+
 	>> 执行这个命令后，就会将远程版本库上的代码同步到本地，却不会合并到任何分支上去，而是会存放在到一个origin/master分支上，通过diff命令来查看远程版本库上修改内容，再调用merge命令将origin/master分支上的修改合并到主分支上
-	
+
 	``` git
 	git pull origin master
 	```
@@ -172,23 +174,23 @@ Git：<https://git-scm.com/download/>
 
 合并前：
              A---B---C      top
-         /        
+         /
     D---E---F---G---H    master
- 
+
 把top分支上的B和C拣选合并到master分支上
 
 1. 切换到master分支
 	gitcheckout master
-	
+
 2. 拣选合并 B 和 C
 	git cherry-pick B C（B 和 C 之间用空格隔开）
-	
+
 3. 合并结束后看log
 	LogID 即哈希值改变，注释信息不变
 
-合并后： 
+合并后：
              A---B---C      top
-         /        
+         /
     D---E---F---G---H---B'---C'   master
 
 注：合并产生conflict，解决了conflict，用 git add  conflict文件，然后用git commit不带注释可保留原提交注释。
@@ -200,26 +202,26 @@ Git：<https://git-scm.com/download/>
 
 合并前：
           A---B---C      top
-         /        
+         /
     D---E---F---G---H    master
 
 把top分支上的B和C压合合并到master分支上
 
 1. 切换到master分支
 	gitcheckout master
-	
+
 2. 压合合并 B和C
 	git merge --squash B C （B和C之间用空格隔开）
-	
+
 3. 把合并过来的修改提交到master分支上
 	git commit -m " 注释 "
-	
+
 4. 合并结束后看log
 	新增一条提交，注释是新的注释
 
 合并后：
           A---B---C      top
-         /        
+         /
     D---E---F---G---H---BC    master
 
 注：两个分支通过  git merge --squash ，只能把 A 或者 AB 或者 ABC 合并到master 上， 不能实现  BC 到 master上
@@ -230,17 +232,17 @@ git merge --squash 后面如果跟着哈希值，不管跟几个哈希值，不�
 
 合并前：
           A---B---C      top
-         /        
+         /
     D---E---F---G---H    master
 
 把top分支合并到master分支上
 
 1. 切换到master分支
 	gitcheckout master
-	
+
 2. 合并top分支
 	git merge top
-	
+
 3. 合并结束后看log
 	top上的提交增加到master上，并新增一条合并信息。
 
@@ -253,21 +255,21 @@ git merge --squash 后面如果跟着哈希值，不管跟几个哈希值，不�
 
 
 ***
-待功能开发完毕之后，合并到develop分支，合并的时候有两种方式： 
+待功能开发完毕之后，合并到develop分支，合并的时候有两种方式：
 
-1. 压合合并：将在issue1上的修改作为一次提交到develop分支上 
-       git checkout develop 
+1. 压合合并：将在issue1上的修改作为一次提交到develop分支上
+       git checkout develop
        git merge --squash issue1
 
-2. 直接合并：可以保留issue1上全部的历史提交记录 
-       git checkout develop 
-       git merge issue1 
+2. 直接合并：可以保留issue1上全部的历史提交记录
+       git checkout develop
+       git merge issue1
 
        合并错误日志：2.10：Already up-to-date
 
-3. 拣选合并：将issue1上的部分活动合并到develop上，这个方式不适合上面描述的场景 
-       git checkout develop 
-       git cherry-pick 321d76f（连续拣选可以通过-n选项） 
+3. 拣选合并：将issue1上的部分活动合并到develop上，这个方式不适合上面描述的场景
+       git checkout develop
+       git cherry-pick 321d76f（连续拣选可以通过-n选项）
 
 
 Git reflog 恢复项目历史
