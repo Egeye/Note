@@ -93,6 +93,12 @@ Git：<https://git-scm.com/download/>
 	```
 	> 查看提交记录具体修改内容，在命令中加入-p参数
 
+    ```
+    git log filename
+    ```
+    > filename（绝对路径） 或 （先进入此文件所在的目录下，当前文件名）
+
+
 11. 分支
 	``` git
 	git branch –a
@@ -273,3 +279,36 @@ git merge --squash 后面如果跟着哈希值，不管跟几个哈希值，不�
 
 
 Git reflog 恢复项目历史
+
+
+---
+1. git log filename 可以看到fileName相关的commit记录
+2. git log -p filename 可以显示每次提交的diff
+3. git show commit-id filename 只看某次提交中的某个文件变化，可以直接加上fileName
+4. git show -s --pretty=raw  id(59047cce6eeb2d8fd9fa361e01dbb88d9a37cf4e) 根据 commit-id 查看某个提交
+5. 借助可视化工具 如 sourceTree 在最后一次修改的记录上 右键选中文件 查看历史修改
+6. git log 的常用选项 filename （绝对路径） 或 （先进入此文件所在的目录下，当前文件名）
+
+选项            | 说明
+---             | ---
+-p 				| 按补丁格式显示每个更新之间的差异。
+--stat 			| 显示每次更新的文件修改统计信息。
+--shortstat 	| 只显示 --stat 中最后的行数修改添加移除统计。
+--name-only 	| 仅在提交信息后显示已修改的文件清单。
+--name-status 	| 显示新增、修改、删除的文件清单。
+--abbrev-commit | 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。
+--relative-date | 使用较短的相对时间显示（比如，“2 weeks ago”）。
+--graph 		| 显示 ASCII 图形表示的分支合并历史。
+--pretty 		| 使用其他格式显示历史提交信息,可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。
+
+
+---
+选项                | 说明
+---                 | ---
+-(n) 				| 显示最近的 n 条提交
+--since, --after 	| 仅显示指定时间之后的提交。
+--until, --before 	| 仅显示指定时间之前的提交。
+--author 			| 仅显示指定作者相关的提交。
+--committer 		| 仅显示指定提交者相关的提交。
+--grep 				| 仅显示含指定关键字的提交。
+-S 					| 仅显示添加或移除了某个关键字的提交。
