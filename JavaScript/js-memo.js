@@ -184,3 +184,6 @@
         $('#elemId').css('display','block');
         testFlag = true;
     }
+
+17. AngularJS的比较
+    angular.equals(x, y);
