@@ -1,7 +1,8 @@
 ### Git 使用
 
-Github：Egeye8t
-Git：<https://git-scm.com/download/>
+> Github：Egeye8t
+
+> [Git](<https://git-scm.com/download/>)
 
 1. 配置 & 设置代理
 	``` git
@@ -110,21 +111,35 @@ Git：<https://git-scm.com/download/>
 	```
 	> 创建分支
 
-
 	``` git
 	git checkout version1.0
 	```
 	> 切换分支
-
 
 	``` git
 	git branch -D version1.0
 	```
 	> 删除分支
 
-	>> 主线为 master分支
+	> 主线为 master分支
 
-	>> 分支前面*号代表当前所处的分支
+	> 分支前面*号代表当前所处的分支
+
+	```
+	git push origin test:master
+	```
+	> 提交本地test分支作为远程的master分支，远程的github就会自动创建一个test分支
+
+	```
+	git push origin test:test
+	```
+
+	> 提交本地test分支作为远程的test分支
+
+	```
+	git push origin :test
+	```
+	> 删除远程的分支,左边的分支为空，那么将删除:右边的远程的分支,但是本地还会保存的
 
 12. 合并
 	``` git
@@ -153,10 +168,10 @@ Git：<https://git-scm.com/download/>
 
 	> http://blog.csdn.net/bat1992/article/details/54893290 相关配置
 
-
-	``` git
+	```
 	git push origin master
 	```
+
 	> 本地修改的内容同步到远程版本库
 
 	``` git
@@ -312,3 +327,23 @@ Git reflog 恢复项目历史
 --committer 		| 仅显示指定提交者相关的提交。
 --grep 				| 仅显示含指定关键字的提交。
 -S 					| 仅显示添加或移除了某个关键字的提交。
+
+
+---
+
+## Github
+* 展示页面代码必须发布到名为“gh-pages”的分支上
+* 访问地址为https://account.github.io/repository
+
+---
+
+#### Git放弃本地所有修改，强制更新
+
+```
+git fetch --all
+git reset --hard origin/master
+```
+
+> git fetch 只是下载远程的库的内容，不做任何的合并
+
+> git reset 把HEAD指向刚刚下载的最新的版本

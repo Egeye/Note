@@ -10,7 +10,6 @@
 
 3. ip addr show
 
-
 4. mkdir
 
 5. 权限：chmod 777 restroeData.sh
@@ -41,15 +40,24 @@
 
     > sftp> get xxxx
 
+13. 删除文件夹：rm -rf [directory]
+
+---
 
 ### Setting
 1. 配置隧道时侦听端口可能会被占用
+
 2. VirtualBox设置network Port forwarding
+
+---
 
 ### SQLServer2005
 1. cscript C:\inetpub\adminscripts\adsutil.vbs SET W3SVC/AppPools/Enable32bitAppOnWin64 1
+
 2. C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_regiis.exe -i
-> 按顺序分别复制二个语句，然后在命令提示符上面右键粘贴，然后执行。
+    > 按顺序分别复制二个语句，然后在命令提示符上面右键粘贴，然后执行。
+
+---
 
 ### 查看显卡信息
 1. 运行：dxdiag
