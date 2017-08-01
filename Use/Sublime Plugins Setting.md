@@ -38,7 +38,7 @@
 
 19. AutoFileName 据说是字符串中自动补全路径名什么的
 
-20. SublimeREPL Python学习时安装
+20. SublimeREPL Python学习时安装 Tool里面打开一个命令行tab工具
 
 ***
 
