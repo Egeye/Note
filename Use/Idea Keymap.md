@@ -9,3 +9,7 @@
 1. CodeGlance
 
 > IDEA自带数据库插件
+
+### 自定义快捷键
+1. redo
+2. add selection for next occurrence
