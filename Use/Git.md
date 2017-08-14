@@ -354,3 +354,8 @@ git reset --hard origin/master
 > git fetch 只是下载远程的库的内容，不做任何的合并
 
 > git reset 把HEAD指向刚刚下载的最新的版本
+
+### Git 问题
+![image](http://note.youdao.com/yws/public/resource/7a44bf90ec69dcdc3e3da8d7db1d29d0/xmlnote/885F29946E914FD291158080591E019E/16256)
+
+> git config --system http.sslverify false
