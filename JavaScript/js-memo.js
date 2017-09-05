@@ -187,3 +187,17 @@
 
 17. AngularJS的比较
     angular.equals(x, y);
+
+18. /**
+     * 数组移除指定元素
+     * @param  arr [数组]
+     * @param  val [元素]
+     */
+    function removeUnselect(arr, val) {
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i] === val) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+    }
