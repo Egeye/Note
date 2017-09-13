@@ -34,7 +34,7 @@ public class SecurityTools {
      * 数字签名
      *
      * @param algorithm 算法，如：md5、sha
-     * @param encoding
+     * @param encoding  编码
      * @param src
      * @return
      */
@@ -295,8 +295,7 @@ public class SecurityTools {
      * @param os
      * @param opmod
      */
-    public static CipherOutputStream doFinal(Key key, OutputStream os,
-                                             CIPHER_MODE opmod) {
+    public static CipherOutputStream doFinal(Key key, OutputStream os, CIPHER_MODE opmod) {
 
         CipherOutputStream cos = null;
         try {
@@ -346,8 +345,7 @@ public class SecurityTools {
      * @param data       签名的数据
      * @return
      */
-    public static byte[] sign(PrivateKey privateKey, String algorithm,
-                              byte[] data) {
+    public static byte[] sign(PrivateKey privateKey, String algorithm, byte[] data) {
 
         byte[] sign = null;
         try {
@@ -404,3 +402,4 @@ public class SecurityTools {
         return sb.toString();
     }
 }
+
