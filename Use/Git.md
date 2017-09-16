@@ -83,11 +83,11 @@
 	``` git
 	git log
 	```
-	> 只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
-
+	
 	``` git
 	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1
 	```
+	> 只查看其中一条记录，在命令中指定该记录的id，并加上-1参数（这边是数字1）
 
 	``` git
 	git log 2e7c0547af28cc1e9f303a4a1126fddbb704281b -1 –p
@@ -98,6 +98,11 @@
     git log filename
     ```
     > filename（绝对路径） 或 （先进入此文件所在的目录下，当前文件名）
+    
+    ```
+    git diff --name-status LOG1 LOG2
+    ```
+    > 查看记录的文件列表
 
 
 11. 分支
@@ -187,6 +192,10 @@
 	git pull origin master
 	```
 	> 从远程版本库上获取最新的代码并且合并到本地
+	
+
+14. 对上一次commit的消息做修改
+    > git commit --amend
 
 ***
 ### 一、拣选合并
@@ -359,3 +368,6 @@ git reset --hard origin/master
 ![image](http://note.youdao.com/yws/public/resource/7a44bf90ec69dcdc3e3da8d7db1d29d0/xmlnote/885F29946E914FD291158080591E019E/16256)
 
 > git config --system http.sslverify false
+
+http://rogerdudler.github.io/git-guide/index.zh.html
+
