@@ -46,4 +46,48 @@ public class CommonTools {
         SimpleDateFormat df = new SimpleDateFormat(pattern);
         return df.format(new Date());
     }
+
+    /**
+     * MD5加密计算
+     *
+     * @param signData 字符串集合
+     * @return md5字符串
+     */
+    public static String getSign(Map<String, String> signData, String keygen) {
+        String[] strKey = new String[signData.size()];
+        Iterator iterator = signData.entrySet().iterator();
+        for (int i = 0; i < signData.size(); i++) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            strKey[i] = (String) entry.getKey();
+        }
+
+        Arrays.sort(strKey);
+
+        // 加密前处理
+        StringBuilder encryptStr = new StringBuilder();
+        for (String aStr : strKey) {
+            encryptStr.append(signData.get(aStr)).append("|");
+        }
+        encryptStr.append(keygen);
+        logger.debug("encryptStr: " + encryptStr);
+
+        // 开始加密
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+
+            // 计算md5函数
+            // md5.update(encryptStr.toString().getBytes());
+            // digest()最后确定返回md5 hash值，返回值为8为字符串。因为md5 hash值是16位的hex值，实际上就是8位的字符
+            // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
+            // return new BigInteger(1, md5.digest()).toString(16);
+
+            byte m5[] = md5.digest(encryptStr.toString().getBytes());
+            BASE64Encoder encoder = new BASE64Encoder();
+            return encoder.encode(m5).toLowerCase();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return "";
+        }
+
+    }
 }

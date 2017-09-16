@@ -5,14 +5,12 @@
  */
 document.getElementById('elemId').style.display = 'none';
 $('#elemId').removeAttr('style');
-	
-if(testFlag) 
-{
-	$('#elemId').css('display','none');
-	testFlag = false;
+
+if (testFlag) {
+    $('#elemId').css('display', 'none');
+    testFlag = false;
 }
-else
-{
-	$('#elemId').css('display','block');
-	testFlag = true;
+else {
+    $('#elemId').css('display', 'block');
+    testFlag = true;
 }
