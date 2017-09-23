@@ -22,10 +22,16 @@ $scope.bindData = function (list) {
 size.toFixed(2);
 /** ------------------------------------------------------------------------------------- **/
 
-// 定时器
-/** 深拷贝 **/
+/** 定时器 **/
 setTimeout(function () {
 }, 1000);
+var interval = setInterval(function () {
+}, 300);
+clearInterval(interval);
+
+// Angular
+$interval(function () {
+}, 300);
 $interval.cancel($scope.statusTimer);
 /** ------------------------------------------------------------------------------------- **/
 
@@ -75,6 +81,7 @@ function combineScriptList(a, b) {
     }
     return b;
 }
+
 /** ------------------------------------------------------------------------------------- **/
 
 /** 字符串截取 **/
