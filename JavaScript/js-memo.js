@@ -121,5 +121,12 @@ else {
     testFlag = true;
 }
 /** ------------------------------------------------------------------------------------- **/
-
+document.getElementById("idEnd").isDisabled = true;
+$("#idEnd").attr("disabled","disabled");
+$("#idEnd").disabled = true;
+$("#idEnd").disable = true;
+$("#idEnd").disabled = 'disabled';
+$("#idEnd").disable = 'disabled';
+$("#idEnd").disabled();
+$("#idEnd").disable();
 

@@ -1,7 +1,14 @@
 package tool;
 
+import sun.misc.BASE64Encoder;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
 
 public class CommonTools {
     /**
@@ -69,7 +76,6 @@ public class CommonTools {
             encryptStr.append(signData.get(aStr)).append("|");
         }
         encryptStr.append(keygen);
-        logger.debug("encryptStr: " + encryptStr);
 
         // 开始加密
         try {
