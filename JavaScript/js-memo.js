@@ -6,6 +6,13 @@ angular.copy();
 angular.equals(x, y);
 /** ------------------------------------------------------------------------------------- **/
 
+/** iframe **/
+// 改变iframe内容
+$('#yourID').attr('src', 'yourURL');
+// iframe对象获取
+var view = window.frames['idContent'];
+/** ------------------------------------------------------------------------------------- **/
+
 /** 页面数据存储方式 **/
 sessionStorage.setItem("nodeId", $scope.nodeId);
 sessionStorage.getItem("nodeId");
@@ -16,6 +23,12 @@ window.opener.jQuery('[ng-controller="xxController"]').scope().bindData(JSON.str
 $scope.bindData = function (list) {
     $scope.hasExcuManualInstId = JSON.parse(list);
 };
+/** ------------------------------------------------------------------------------------- **/
+
+/** EasyUI combobox 使用 **/
+$('#file_target').combobox('select', parent.saveFTPData.msg);
+$('#file_target_text').textbox('setValue', detailValue);
+$("#status").combobox("setValue", "0");
 /** ------------------------------------------------------------------------------------- **/
 
 /** 保留两位小数 **/
@@ -129,4 +142,6 @@ $("#idEnd").disabled = 'disabled';
 $("#idEnd").disable = 'disabled';
 $("#idEnd").disabled();
 $("#idEnd").disable();
+$('#idGuide').show();
+$('#idNextBtn').hide();
 

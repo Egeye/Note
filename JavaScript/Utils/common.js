@@ -166,3 +166,24 @@ function arrFilterSame(list) {
     list = keys;
     return list;
 }
+
+/**
+ * 遮罩层
+ */
+function showLoad() {
+    $("<div class=\"datagrid-mask\"></div>").css({
+        display: "block",
+        width: "100%",
+        height: $(window).height()
+    }).appendTo("body");
+    $("<div class=\"datagrid-mask-msg\"></div>").html('请稍候...').appendTo("body").css({
+        display: "block",
+        left: ($(document.body).outerWidth(true) - 50) / 2,
+        top: ($(window).height() - 45) / 2
+    });
+}
+
+function hideLoad() {
+    $(".datagrid-mask").remove();
+    $(".datagrid-mask-msg").remove();
+}
