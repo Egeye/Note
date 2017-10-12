@@ -1,6 +1,8 @@
 ### Git 使用
 
-> Github：Egeye8t
+> Github：Egeye-8t
+
+> 码云：163-8t 
 
 > [Git](<https://git-scm.com/download/>)
 
@@ -146,6 +148,7 @@
 	```
 	> 删除远程的分支,左边的分支为空，那么将删除:右边的远程的分支,但是本地还会保存的
 
+    > [git branch用法总结，查看、新建、删除、重命名](http://blog.csdn.net/afei__/article/details/51567155)
 12. 合并
 	``` git
 	git checkout master
@@ -192,6 +195,11 @@
 	git pull origin master
 	```
 	> 从远程版本库上获取最新的代码并且合并到本地
+	
+	```
+	git fetch origin gui-v-1:gui-v-1
+    ```
+    从远程分支检出到本地分支
 	
 
 14. 对上一次commit的消息做修改
