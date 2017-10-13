@@ -81,7 +81,7 @@ Date.prototype.Format = function (format) {
 };
 
 /**
- *
+ * 字符串替换
  * @param str
  * @param num
  */

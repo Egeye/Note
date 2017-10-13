@@ -135,13 +135,13 @@ else {
 }
 /** ------------------------------------------------------------------------------------- **/
 document.getElementById("idEnd").isDisabled = true;
-$("#idEnd").attr("disabled","disabled");
-$("#idEnd").disabled = true;
-$("#idEnd").disable = true;
-$("#idEnd").disabled = 'disabled';
-$("#idEnd").disable = 'disabled';
-$("#idEnd").disabled();
-$("#idEnd").disable();
-$('#idGuide').show();
-$('#idNextBtn').hide();
+$("#id").attr("disabled","disabled");
+$("#id").disabled = true;
+$("#id").disable = true;
+$("#id").disabled = 'disabled';
+$("#id").disable = 'disabled';
+$("#id").disabled();
+$("#id").disable();
+$('#id').show();
+$('#id').hide();
 
