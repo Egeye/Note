@@ -14,7 +14,7 @@ var view = window.frames['idContent'];
 /** ------------------------------------------------------------------------------------- **/
 
 /** 页面数据存储方式 **/
-sessionStorage.setItem("nodeId", $scope.nodeId);
+sessionStorage.setItem("wfId", that.wfId);
 sessionStorage.getItem("nodeId");
 /** ------------------------------------------------------------------------------------- **/
 
@@ -133,9 +133,36 @@ else {
     $('#elemId').css('display', 'block');
     testFlag = true;
 }
+
+/** 判断字符串类型的数字 **/
+var s = "37";
+if (typeof(s) === "number") {
+    alert("是数字");
+}
+// 37 虽然可以转化成数字，但这里它毕竟是字符串类型，所以此法不正确。
+
+
+var n = parseInt(s);
+if (!isNaN(n)) {
+    alert("是数字");
+}
+// parseInt 会将字符串转化成整数，
+// 但它会忽略非数字部分而不给任何提示，
+// 比如："37ABC" 会转化成 37，所以此法不正确。
+
+
+n = Number(s);
+if (!isNaN(n)) {
+    alert("是数字");
+}
+// 注意：在 JavaScript 中，对于省略写法（如：".3"、"-.3"）、科学计数法（如："3e7"、"3e-7"）、十六进制数（如："0xFF"、"0x3e7"）均被认定为数字格式，这类字符串都可以用 Number 转化成数字。
+// isNaN 返回一个 Boolean 值，指明提供的值是否是 NaN ，NaN 的意思是 not a number（不是一个数字）。
+// 语法：isNaN(numValue)
+/** ------------------------------------------------------------------------------------- **/
+
 /** ------------------------------------------------------------------------------------- **/
 document.getElementById("idEnd").isDisabled = true;
-$("#id").attr("disabled","disabled");
+$("#id").attr("disabled", "disabled");
 $("#id").disabled = true;
 $("#id").disable = true;
 $("#id").disabled = 'disabled';
