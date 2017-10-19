@@ -71,3 +71,4 @@
 ***
 
 * 进入命令面板（ctrl + shift+ p）
+* Alt - hide menubar
