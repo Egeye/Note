@@ -10,3 +10,5 @@ function menuMoreOnclick($container,$menu) {
 }
 
 // 我想取到最后一个class为layui-nav-item或则layui-nav-item layui-this 的li，
+
+var frame = $(window.ducument).find("iframe[id='frameid']")[0].contentWindow;

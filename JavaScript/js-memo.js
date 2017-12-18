@@ -29,6 +29,12 @@ $scope.bindData = function (list) {
 $('#file_target').combobox('select', parent.saveFTPData.msg);
 $('#file_target_text').textbox('setValue', detailValue);
 $("#status").combobox("setValue", "0");
+$(this).combobox('unselect', '');
+
+// 直接收起
+$(this).combobox('hidePanel');
+$("#dep_tasks").combobox({'required':true});
+$("#task_type").combobox('getValue');
 /** ------------------------------------------------------------------------------------- **/
 
 /** 保留两位小数 **/
