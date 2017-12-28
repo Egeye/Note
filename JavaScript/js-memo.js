@@ -26,10 +26,12 @@ $scope.bindData = function (list) {
 /** ------------------------------------------------------------------------------------- **/
 
 /** EasyUI combobox 使用 **/
-$('#file_target').combobox('select', parent.saveFTPData.msg);
-$('#file_target_text').textbox('setValue', detailValue);
+$('#status').combobox('select', parent.saveFTPData.msg);
+$('#status').textbox('setValue', detailValue);
 $("#status").combobox("setValue", "0");
 $(this).combobox('unselect', '');
+$('#status').combobox('getValue'); // 可以说是获得键
+$('#status').combobox('getText');  // 可以说是获得值
 
 // 直接收起
 $(this).combobox('hidePanel');
