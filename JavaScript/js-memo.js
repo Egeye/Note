@@ -26,17 +26,20 @@ $scope.bindData = function (list) {
 /** ------------------------------------------------------------------------------------- **/
 
 /** EasyUI combobox 使用 **/
-$('#status').combobox('select', parent.saveFTPData.msg);
-$('#status').textbox('setValue', detailValue);
-$("#status").combobox("setValue", "0");
-$(this).combobox('unselect', '');
-$('#status').combobox('getValue'); // 可以说是获得键
-$('#status').combobox('getText');  // 可以说是获得值
+$('#id').combobox('select', 1);
+$('#id').combobox('unselect', '');
+$("#id").combobox("setValue", "2");     // 给combobox赋初始值（2是json数据中的id值）
+$('#id').combobox('getValue');          // 可以说是获得键 获取当前值（得到的是json数据中的id值）
+$('#id').combobox('getText');           // 可以说是获得值
+$('#id').combobox('getData');           // 获取所有数据
+$('#id').combobox('clear');             // 清空combobox的值
+$('#id').combobox('hidePanel');         // 直接收起
+$("#id").combobox({'required': true});
+$('#id').combobox('disable');           // 禁用combobox
+$('#id').combobox('enable');            // 启用combobox
 
-// 直接收起
-$(this).combobox('hidePanel');
-$("#dep_tasks").combobox({'required':true});
-$("#task_type").combobox('getValue');
+/** textbox **/
+$('#status').textbox('setValue', detailValue);
 /** ------------------------------------------------------------------------------------- **/
 
 /** 保留两位小数 **/
