@@ -37,6 +37,17 @@ $('#id').combobox('hidePanel');         // 直接收起
 $("#id").combobox({'required': true});
 $('#id').combobox('disable');           // 禁用combobox
 $('#id').combobox('enable');            // 启用combobox
+$kafkaServers.combobox('textbox').prev().hide();
+$kafkaServers.next().children().eq(1).width($kafkaServers.next().children().eq(1).width() + 20)
+
+var row = $('#dg').datagrid('getSelected');     // 1、获取当前行
+var rows = $('#dg').datagrid('getSelections');  // 2、获取所有选中行
+var rows = $("#dg").datagrid("getRows");        // 3、获取所有行
+var rows = $('#dg').datagrid('getRows');        // 4、获取行中间的某列数据
+for (var i = 0; i < rows.length; i++) {
+    alert(rows[i]['SCORE']); //获取指定列
+}
+
 
 /** textbox **/
 $('#status').textbox('setValue', detailValue);
