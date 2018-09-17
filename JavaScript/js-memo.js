@@ -201,3 +201,10 @@ $('#id').hide();
 $("#search").find("option").remove();
 $("#search").empty();
 /** ------------------------------------------------------------------------------------- **/
+
+
+// 判断字符串中是否存在子字符串(不区分大小写)
+function  coverString(subStr,str){
+    var reg = eval("/"+subStr+"/ig");
+    return reg.test(str);
+}
