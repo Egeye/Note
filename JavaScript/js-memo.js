@@ -11,6 +11,23 @@ angular.equals(x, y);
 $('#yourID').attr('src', 'yourURL');
 // iframe对象获取
 var view = window.frames['idContent'];
+var tableData;
+if (parent.$("#content-main").find("iframe:visible").length > 0) {
+    // from treeGird.ftl
+    tableData = parent.$("#content-main").find("iframe:visible").get(0).contentWindow.$("#dg").treegrid("getSelected");
+    $("#timeCost").text(tableData["time_cost"] || "-");
+    $("#remark").text(tableData["remark"] || "-");
+    $("#startTime").text(tableData["start_time"] || "-");
+    $("#endTime").text(tableData["end_time"] || "-");
+} else if (parent.$("#dg").length > 0) {
+    // from workList.ftl
+    tableData = parent.$("#dg").datagrid("getSelected");
+    $("#timeCost").text(tableData["time_cost"] || "-");
+    $("#remark").text(tableData["remark"] || "-");
+    $("#startTime").text(tableData["start_time"] || "-");
+    $("#endTime").text(tableData["end_time"] || "-");
+}
+
 /** ------------------------------------------------------------------------------------- **/
 
 /** 页面数据存储方式 **/
